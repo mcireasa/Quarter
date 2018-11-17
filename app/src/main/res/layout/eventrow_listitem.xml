@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:padding="10dp">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/eventImage"
         android:layout_width="80dp"
@@ -22,6 +21,5 @@
         android:text="Alin Zamfiroiu a distribuit o postare"
         android:textColor="#000"
         android:textSize="17sp" />
-
 
 </RelativeLayout>

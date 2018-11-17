@@ -20,6 +20,8 @@ public class NewsFeedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed);
+        Log.d(TAG, "onCreate:started");
+        initImageBitmaps();
     }
 
     private void initImageBitmaps() {
