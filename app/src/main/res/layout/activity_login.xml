@@ -70,7 +70,7 @@
         android:onClick="OnClikLoginBtn"
         android:text="Login"
         android:textColor="#2121b1"
-        android:textSize="17sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/ForgotPassText"
