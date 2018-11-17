@@ -48,10 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     public void OnClikLoginBtn(View view) {
         final EditText textUsername = (EditText)findViewById(R.id.TextUsername);
         final EditText textPaswword = (EditText)findViewById(R.id.TextPassword);
-        Button btnLogin = (Button) findViewById(R.id.btnLogim);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
                 //verificare username + password cu bd
                 //de aflat cum draq retinem username-ul si parola peste tot in aplicatie (in resources de preferabil)
                 if(!textUsername.getText().toString().isEmpty() && !textPaswword.getText().toString().isEmpty())
@@ -61,9 +58,6 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(LoginActivity.this, "Please fill any empty fields!", Toast.LENGTH_LONG).show();
                 }
-
-            }
-        });
 
     }
 }

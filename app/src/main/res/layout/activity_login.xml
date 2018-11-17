@@ -8,15 +8,6 @@
     tools:context=".LoginActivity">
 
 
-    <ImageView
-        android:id="@+id/ImgMainLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        app:srcCompat="@mipmap/ic_app_icon_round" />
-
     <EditText
         android:id="@+id/TextUsername"
         android:layout_width="wrap_content"
@@ -25,6 +16,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="230dp"
         android:layout_marginEnd="35dp"
+        android:paddingStart="10dp"
         android:background="@drawable/edit_round"
         android:ems="10"
         android:hint="Username"
@@ -41,6 +33,7 @@
         android:layout_marginBottom="279dp"
         android:background="@drawable/edit_round"
         android:ems="10"
+        android:paddingStart="10dp"
         android:hint="Password
 "
         android:inputType="textPassword"
@@ -85,14 +78,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="121dp"
-        android:layout_marginBottom="82dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="79dp"
+        android:clickable="true"
         android:gravity="center"
+        android:onClick="onClickForgotPassText"
         android:text="Forgot Password?"
         android:textColor="#FFF"
-        android:textSize="20dp"
-        android:clickable="true"
-        android:onClick="onClickForgotPassText"/>
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="218dp"
+        android:layout_height="105dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        app:srcCompat="@drawable/logo" />
 
 </RelativeLayout>
