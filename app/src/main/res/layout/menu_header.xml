@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@drawable/menuheaderimage">
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:paddingLeft="5dp"
+       android:src="@drawable/scoobydoo"
+       android:layout_width="100dp"
+       android:layout_height="100dp" />
+    <TextView
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Scooby Doo"
+        android:textColor="#174b99"
+        android:textAlignment="center"
+        android:background="#07000000"
+        android:textStyle="bold"/>
+    <TextView
+        android:paddingTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scobby@gmail.com"
+        android:textColor="#174b99"
+        android:textAlignment="center"
+        android:background="#07000000"
+        android:textStyle="bold"/>
+
+
+
+
+</LinearLayout>

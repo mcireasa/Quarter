@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mcireasa.quizzapp">
 
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_app_icon_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -17,7 +19,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".MeniuProfesorActivity"></activity>
+        <activity android:name=".MeniuProfesorActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".MyAccountActivity" />
+        <activity android:name=".CreateTestActivity" />
+        <activity android:name=".NewsFeedActivity" />
+        <activity android:name=".GalleryActivity" />
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".CategoryOptionsActivity" />
+        <activity android:name=".TestsActivity" />
+        <activity android:name=".AddCategoryActivity" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>

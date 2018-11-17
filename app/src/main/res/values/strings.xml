@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">QuizzApp</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="link_siteul_nostru">
+        <a href="https://www.google.com/">Have any questions?</a>
+    </string>
+    <string name="nav_account">My Account</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Log out</string>
+    <string name="button_meniu_principal_categorii">Categories</string>
+    <string name="button_meniu_principal_newsfeed">News Feed</string>
+    <string name="button_meniu_principal_crearetest">Create Test</string>
+    <string name="category_title">My Category</string>
+    <string name="button_showTest">Tests</string>
+    <string name="button_showQuestions">Questions</string>
+    <string name="MyCategory">Category</string>
 
 </resources>

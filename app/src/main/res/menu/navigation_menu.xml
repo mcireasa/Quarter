@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@mipmap/round_person_white_24dp"
+        android:title="@string/nav_account" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@mipmap/round_settings_white_24dp"
+        android:title="@string/nav_settings" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@mipmap/round_exit_to_app_white_24dp"
+        android:title="@string/nav_logout" />
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@mipmap/baseline_info_black_24dp"
+        android:title="About"
+        />
+
+
+
 </menu>

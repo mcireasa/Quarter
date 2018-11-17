@@ -16,7 +16,7 @@
         android:gravity="center"
         android:textSize="16dp"
         android:layout_marginTop="25sp"
-        android:text="Introdu datele pentru a-ti reseta parola:"
+        android:text="Please fill the blank spaces to reset the password:"
         android:textAlignment="center" />
 
     <EditText

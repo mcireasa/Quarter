@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3094af">
+
+    <Button
+        android:id="@+id/buttonTests"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="37dp"
+        android:background="#FF0000"
+        android:onClick="seeTest"
+        android:text="Tests"
+        android:textColor="@android:color/white"
+        android:textColorLink="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textViewNameC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/buttonQuestions"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_below="@+id/buttonTests"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="40dp"
+        android:background="#FFD700"
+        android:text="Questions"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/buttonEditCategory"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_below="@+id/buttonQuestions"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="40dp"
+        android:background="#FF0000"
+        android:text="Edit"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/buttonDelete"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_below="@+id/buttonEditCategory"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="40dp"
+        android:background="#FFD700"
+        android:text="Delete"
+        android:textColor="@android:color/white"/>
+</RelativeLayout>
