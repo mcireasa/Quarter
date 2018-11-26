@@ -49,9 +49,10 @@
             android:id="@+id/esti_student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/esti_student"
             android:layout_marginTop="10dp"
-            android:textColor="@color/alb_murdar"/>
+            android:clickable="true"
+            android:text="@string/esti_student"
+            android:textColor="@color/alb_murdar" />
 
     </LinearLayout>
 

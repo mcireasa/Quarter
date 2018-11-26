@@ -78,6 +78,7 @@ public class MeniuProfesorActivity extends AppCompatActivity {
         startActivity(intentNewsfeed);
     }
 
+
     public void seeCategories(View view) {
         Intent explicitIntent =
                 new Intent(this,
