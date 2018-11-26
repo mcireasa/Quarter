@@ -70,7 +70,7 @@
         android:onClick="OnClikLoginBtn"
         android:text="Login"
         android:textColor="#2121b1"
-        android:textSize="17sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/ForgotPassText"
@@ -79,8 +79,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="79dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="77dp"
         android:clickable="true"
         android:gravity="center"
         android:onClick="onClickForgotPassText"

@@ -4,4 +4,21 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="backgroud">#3094af</color>
+
+    <color name="galben_lamaie_taiata_sus">#f5e552</color>
+    <color name="albastru">#285c71</color>
+    <color name="alt_galben">#fbe400</color>
+    <color name="alb_murdar">#f8f0e5</color>
+    <color name="galben_frunza">#d1cc26</color>
+    <color name="verde">#8e9b31</color>
+    <color name="portocaliu">#f5b923</color>
+
+    <color name="albastru1">#41cac6</color>
+    <color name="albastru2">#4c99cf</color>
+    <color name="albastru3">#4874a9</color>
+    <color name="mov1">#5a5388</color>
+    <color name="mov2">#524364</color>
+
+
+
 </resources>

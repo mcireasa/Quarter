@@ -22,18 +22,18 @@ public class MeniuProfesorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meniu_profesor);
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        actionBarToggle = new ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        actionBarToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarToggle);
         actionBarToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navigationView = (NavigationView)findViewById(R.id.navigation_view);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.nav_settings:
                         Intent intentSettings = new Intent(MeniuProfesorActivity.this, SettingsActivity.class);
                         startActivity(intentSettings);
@@ -58,25 +58,24 @@ public class MeniuProfesorActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(actionBarToggle.onOptionsItemSelected(item)){
+        if (actionBarToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
-
     }
 
 
     public void onClickCreateTest(View view) {
-         Intent intentCreateTest = new Intent(MeniuProfesorActivity.this, CreateTestActivity.class);
-         startActivity(intentCreateTest);
+        Intent intentCreateTest = new Intent(MeniuProfesorActivity.this, CreateTestActivity.class);
+        startActivity(intentCreateTest);
     }
 
     public void onClickNewsfeed(View view) {
+        Intent intentNewsfeed = new Intent(MeniuProfesorActivity.this, NewsFeedActivity.class);
+        startActivity(intentNewsfeed);
     }
 
     public void seeCategories(View view) {

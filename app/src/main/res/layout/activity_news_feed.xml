@@ -15,5 +15,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:scrollbars="vertical"
-        tools:listitem="@layout/recycler_view_item" />
+        tools:listitem="@layout/eventrow_listitem" />
 </RelativeLayout>
+

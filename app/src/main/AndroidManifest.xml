@@ -29,7 +29,10 @@
         <activity android:name=".CategoryOptionsActivity" />
         <activity android:name=".TestsActivity" />
         <activity android:name=".AddCategoryActivity" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".MeniuStudentActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".StartTest"></activity>
     </application>
 
 </manifest>
