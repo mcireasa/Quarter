@@ -15,5 +15,15 @@
     <string name="button_showTest">Tests</string>
     <string name="button_showQuestions">Questions</string>
     <string name="MyCategory">Category</string>
+    <string name="button_meniu_student_search">Search</string>
+    <string name="button_meniu_student_myTests">My Tests</string>
+    <string name="button_meniu_student_startTest">Start a test</string>
+    <string name="textview">Search for categories/teachers</string>
+    <string name="text_pin">Test PIN</string>
+    <string name="enterTest">ENTER</string>
+    <string name="email">Scobby@gmail.com</string>
+    <string name="username_menu">Scooby Doo</string>
+    <string name="esti_student">Esti student?</string>
+
 
 </resources>

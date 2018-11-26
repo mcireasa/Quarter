@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MeniuStudentActivity"
+    android:background="@color/mov1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button_meniu_student_search"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_round"
+            android:onClick="onClickSearch"
+            android:text="@string/button_meniu_student_search"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_meniu_student_myTests"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_round5"
+            android:text="@string/button_meniu_student_myTests"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/butto_meniu_student_startTest"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_round"
+            android:onClick="onClickStartTest"
+            android:text="@string/button_meniu_student_startTest"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_meniu_student_newsfeed"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_round5"
+            android:text="@string/button_meniu_principal_newsfeed"
+            android:textSize="20sp"/>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:background="@drawable/menuheaderimage"
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:background="@drawable/logo"
     android:orientation="vertical">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:paddingLeft="5dp"
-        android:src="@drawable/scoobydoo" />
+        android:src="@drawable/logoprofile" />
 
     <TextView
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="#07000000"
-        android:paddingLeft="5dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/edit_round2"
+        android:gravity="center"
+        android:paddingStart="5dp"
         android:paddingTop="5dp"
-        android:text="Scooby Doo"
+        android:text="@string/username_menu"
         android:textAlignment="center"
         android:textColor="#174b99"
         android:textStyle="bold" />
@@ -25,9 +27,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#07000000"
+        android:layout_marginLeft="2dp"
+        android:background="@drawable/edit_round2"
+        android:gravity="center"
+        android:paddingLeft="3dp"
         android:paddingTop="3dp"
-        android:text="Scobby@gmail.com"
+        android:paddingRight="3dp"
+        android:text="@string/email"
         android:textAlignment="center"
         android:textColor="#174b99"
         android:textStyle="bold" />
