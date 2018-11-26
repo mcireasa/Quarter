@@ -11,12 +11,13 @@ import com.mcireasa.quizzapp.Model.Category;
 public class CategoryOptionsActivity extends AppCompatActivity {
 
     private Category category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_options);
-        TextView tv=(TextView)findViewById(R.id.textViewNameC);
-        category= (Category) getIntent().getSerializableExtra("Category_selected");
+        TextView tv = (TextView) findViewById(R.id.textViewNameC);
+        category = (Category) getIntent().getSerializableExtra("Category_selected");
         tv.setText(category.getName());
 
     }

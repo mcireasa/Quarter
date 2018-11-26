@@ -10,8 +10,8 @@ public class Category implements Serializable {
     private List<Question> questions;
 
     public Category() {
-        tests=new ArrayList<>();
-        questions=new ArrayList<>();
+        tests = new ArrayList<>();
+        questions = new ArrayList<>();
     }
 
     public Category(String name, List<Test> tests, List<Question> questions) {
