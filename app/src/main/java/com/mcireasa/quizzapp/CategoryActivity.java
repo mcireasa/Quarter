@@ -1,6 +1,7 @@
 package com.mcireasa.quizzapp;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ public class CategoryActivity extends AppCompatActivity {
 
     private ListView listView;
     private Intent myIntent;
+    private List lista;
+    ArrayAdapter<Category> arrayAdapter=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +38,14 @@ public class CategoryActivity extends AppCompatActivity {
         List<Test> test = c3.getTests();
         c3.addTests(t1);
         c3.setName("Android");
-        List<Category> lista = new ArrayList<>();
+         lista = new ArrayList<>();
         lista.add(c1);
         lista.add(c2);
         lista.add(c3);
 
 
         listView = (ListView) findViewById(R.id.listviewcategory);
-        ArrayAdapter<Category> arrayAdapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1, lista);
+         arrayAdapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1, lista);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(listClick);
     }
@@ -59,7 +62,21 @@ public class CategoryActivity extends AppCompatActivity {
 
     public void add(View view) {
         Intent addIntent = new Intent(this, AddCategoryActivity.class);
-        startActivity(addIntent);
+        startActivityForResult(addIntent,1);
     }
 
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode==1&&resultCode==RESULT_OK){
+            Category category=new Category();
+            category.setName(data.getStringExtra("CategoryName"));
+            lista.add(category);
+            if(arrayAdapter!=null) {
+                arrayAdapter.notifyDataSetChanged();
+
+            }
+        }
+    }
 }

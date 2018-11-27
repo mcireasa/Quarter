@@ -8,6 +8,7 @@
     <string name="nav_account">My Account</string>
     <string name="nav_settings">Settings</string>
     <string name="nav_logout">Log out</string>
+    <string name="error_text">Ups</string>
     <string name="button_meniu_principal_categorii">Categories</string>
     <string name="button_meniu_principal_newsfeed">News Feed</string>
     <string name="button_meniu_principal_crearetest">Create Test</string>
@@ -24,6 +25,9 @@
     <string name="email">Scobby@gmail.com</string>
     <string name="username_menu">Scooby Doo</string>
     <string name="esti_student">Esti student?</string>
+    <string name="buttonEditTest">Edit</string>
+    <string name="shareTest">Share</string>
+    <string name="deleteTest">Delete</string>
 
 
 </resources>
