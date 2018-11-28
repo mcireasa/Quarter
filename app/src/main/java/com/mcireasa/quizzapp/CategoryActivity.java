@@ -35,8 +35,11 @@ public class CategoryActivity extends AppCompatActivity {
         Category c3 = new Category();
         Test t1 = new Test();
         t1.setText("Test greu");
+        Test t2=new Test();
+        t2.setText("Foaaarfte shjdsd");
         List<Test> test = c3.getTests();
         c3.addTests(t1);
+        c3.addTests(t2);
         c3.setName("Android");
          lista = new ArrayList<>();
         lista.add(c1);

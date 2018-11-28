@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.mcireasa.quizzapp.Adapters.TestsAdapter;
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Test;
 
@@ -26,8 +27,9 @@ public class TestsActivity extends AppCompatActivity {
         category= (Category) getIntent().getSerializableExtra("Category");
         List<Test> lista= (ArrayList<Test>) category.getTests();
         tv.setText(category.getName());
+        TestsAdapter testsAdapter=new TestsAdapter(this,R.layout.test_item,lista);
         ArrayAdapter<Test> arrayAdapter=new ArrayAdapter<Test>(this,android.R.layout.simple_list_item_1,lista);
-        listView.setAdapter(arrayAdapter);
+        listView.setAdapter(testsAdapter);
 
 
     }
