@@ -28,6 +28,8 @@
     <string name="buttonEditTest">Edit</string>
     <string name="shareTest">Share</string>
     <string name="deleteTest">Delete</string>
+    <string name="TextQuestion">Text:</string>
+    <string name="ScoreQuestion">Score:</string>
 
 
 </resources>

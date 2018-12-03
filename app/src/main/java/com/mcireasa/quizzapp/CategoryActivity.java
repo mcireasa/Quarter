@@ -34,9 +34,12 @@ public class CategoryActivity extends AppCompatActivity {
         c2.setName("Abecedar");
         Category c3 = new Category();
         Test t1 = new Test();
-        t1.setText("Test greu");
+        t1.setText("Poo");
+        t1.setMpublic(true);
         Test t2=new Test();
-        t2.setText("Foaaarfte shjdsd");
+        t2.setText("Android");
+        t2.setMpublic(false);
+        t2.setCode("23456");
         List<Test> test = c3.getTests();
         c3.addTests(t1);
         c3.addTests(t2);

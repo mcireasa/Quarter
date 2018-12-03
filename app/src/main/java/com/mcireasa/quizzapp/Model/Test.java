@@ -7,13 +7,9 @@ public class Test implements Serializable {
     private int time;
     private boolean active;
     private boolean mpublic;
+    private String code;
 
-    public Test(String text, int time, boolean active, boolean mpublic) {
-        this.text = text;
-        this.time = time;
-        this.active = active;
-        this.mpublic = mpublic;
-    }
+
 
     public Test() {
 
@@ -49,6 +45,14 @@ public class Test implements Serializable {
 
     public void setMpublic(boolean mpublic) {
         this.mpublic = mpublic;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Override

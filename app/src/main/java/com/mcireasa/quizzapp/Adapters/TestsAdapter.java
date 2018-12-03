@@ -31,7 +31,7 @@ public class TestsAdapter extends ArrayAdapter<Test> {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.test_item, null);
         }
-        Test test=getItem(position);
+        final Test test=getItem(position);
 
         TextView nameTest=(TextView)convertView.findViewById(R.id.nameTest);
         nameTest.setText(test.getText());
@@ -42,7 +42,27 @@ public class TestsAdapter extends ArrayAdapter<Test> {
                 Toast.makeText(getContext(),"Button was clicked for "+getItem(position).getText(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        Button codeB=(Button)convertView.findViewById(R.id.codeButton);
+        TextView publicMode=(TextView)convertView.findViewById(R.id.publicStatus) ;
+        if(test.isMpublic()){
+            codeB.setVisibility(View.INVISIBLE);
+            publicMode.setText("public");
+        }else{
+            publicMode.setText("private");
+        }
+
+
+        codeB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),test.getCode(),Toast.LENGTH_SHORT).show();
+            }
+        });
         return convertView;
+
+
+
 
     }
 
