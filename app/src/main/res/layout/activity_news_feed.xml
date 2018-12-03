@@ -16,5 +16,6 @@
         android:layout_alignParentTop="true"
         android:scrollbars="vertical"
         tools:listitem="@layout/eventrow_listitem" />
+
 </RelativeLayout>
 
