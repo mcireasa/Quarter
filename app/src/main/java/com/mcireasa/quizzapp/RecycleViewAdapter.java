@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.mcireasa.quizzapp.Model.Event;
 
-import java.util.Collections;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -19,6 +18,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     private static final String TAG = "RecyclerViewAdapter";
     private List<Event> eventList;
+    private LayoutInflater inflater;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -28,9 +28,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         public ViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.image);
+            //image = itemView.findViewById(R.id.image);
             text = itemView.findViewById(R.id.tv_eventrow);
-            parentLayout = itemView.findViewById(R.id.parent_layout_eventnewsfeed);
+            //parentLayout = itemView.findViewById(R.id.parent_layout_eventnewsfeed);
         }
     }
 
@@ -49,8 +49,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         Event current = eventList.get(position);
-        holder.text.setText(current.textView);
-        holder.image.setImageResource(current.imageId);
+        holder.text.setText(current.getTextView());
+        //holder.image.setImageBitmap(null);
     }
 
     @Override
