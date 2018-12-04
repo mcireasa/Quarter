@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Category implements Serializable {
+    private int id;
     private String name;
     private List<Test> tests;
     private List<Question> questions;
@@ -15,10 +16,19 @@ public class Category implements Serializable {
         questions = new ArrayList<>();
     }
 
+
+
     public Category(String name, List<Test> tests, List<Question> questions) {
         this.name = name;
         this.tests = tests;
         this.questions = questions;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
