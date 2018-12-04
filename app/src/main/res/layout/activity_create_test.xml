@@ -4,131 +4,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateTestActivity"
+    android:background="@color/backgroud"
     android:orientation="vertical"
-    android:background="@color/backgroud">
+    tools:context=".CreateTestActivity"
+    tools:layout_editor_absoluteY="81dp">
 
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="82dp"
         android:layout_height="1dp"
-        android:layout_marginBottom="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Add quiz"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#000"/>
+        android:inputType="textPersonName"
+        android:textColor="#000"
+        tools:layout_editor_absoluteX="151dp" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="97dp"
         android:layout_height="42dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="184dp"
         android:ems="10"
         android:hint="Quiz code: "
         android:inputType="textPersonName"
         android:textColor="#000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="184dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/quiz_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="23dp"
         android:ems="10"
         android:hint="Add quiz code here"
         android:inputType="textPersonName"
         android:textColor="#000"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="4dp" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/activebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
+        android:buttonTint="#a72626"
         android:text="Active"
-        app:layout_constraintBottom_toTopOf="@+id/editText8"
-        app:layout_constraintStart_toStartOf="@+id/editText8"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
         android:textColor="#000"
-        android:buttonTint="#a72626"/>
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="54dp" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/privatebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
+        android:buttonTint="#a72626"
         android:text="Private"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
-        app:layout_constraintStart_toStartOf="@+id/editText8"
-        app:layout_constraintTop_toBottomOf="@+id/editText8"
         android:textColor="#000"
-        android:buttonTint="#a72626"/>
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="155dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Category"
-        app:layout_constraintBottom_toTopOf="@+id/editText7"
-        app:layout_constraintStart_toStartOf="@+id/radioButton2"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2"
-        android:textColor="#000"/>
+        android:inputType="textPersonName"
+        android:textColor="#000"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="206dp" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/access_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Access code"
-        app:layout_constraintBottom_toTopOf="@+id/editText9"
-        app:layout_constraintStart_toStartOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        android:textColor="#000"/>
+        android:inputType="textPersonName"
+        android:textColor="#000"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="265dp" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/active_until"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Active untill"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton2"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton"
-        android:textColor="#000"/>
+        android:inputType="textPersonName"
+        android:textColor="#000"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="113dp" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="33dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Timer:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        android:textColor="#000"/>
+        android:inputType="textPersonName"
+        android:textColor="#000"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <Button
+        android:id="@+id/addQ"
+        android:layout_width="106dp"
+        android:layout_height="66dp"
+        android:onClick="onClickAddQuiz"
+
+        android:text="Add Questions"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="404dp" />
 
 
 </android.support.constraint.ConstraintLayout>
