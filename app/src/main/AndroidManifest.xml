@@ -33,7 +33,8 @@
         <activity android:name=".MeniuStudentActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".StartTest" />
-        <activity android:name=".QuestionFormActivity"></activity>
+        <activity android:name=".QuestionFormActivity" />
+        <activity android:name=".AnswersFormActivity"></activity>
     </application>
 
 </manifest>

@@ -1,14 +1,15 @@
 package com.mcireasa.quizzapp.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Test implements Serializable {
-    private String text;
+    private String name;
     private int time;
     private boolean active;
     private boolean mpublic;
     private String code;
-
+    private List<Question> questions;
 
 
     public Test() {
@@ -16,11 +17,11 @@ public class Test implements Serializable {
     }
 
     public String getText() {
-        return text;
+        return name;
     }
 
     public void setText(String text) {
-        this.text = text;
+        this.name = text;
     }
 
     public int getTime() {
@@ -55,8 +56,18 @@ public class Test implements Serializable {
         this.code = code;
     }
 
+
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
     @Override
     public String toString() {
-        return text;
+        return name;
     }
 }

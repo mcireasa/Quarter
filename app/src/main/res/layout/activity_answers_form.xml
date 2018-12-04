@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnswersFormActivity"
+    android:id="@+id/linear"
+    android:background="@color/albastru1">
+
+    <EditText
+        android:id="@+id/AnswerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AnswerFormTitle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="78dp"
+        android:ems="10"
+        android:hint="Answer Text"
+        android:inputType="textPersonName" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIsCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_below="@+id/AnswerText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="152dp"
+        android:text="Is Correct" />
+
+    <TextView
+        android:id="@+id/AnswerFormTitle"
+        android:layout_width="151dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="106dp"
+        android:text="New Answer"
+        android:textColor="#000"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/FinishAddingAnswers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="43dp"
+        android:text="Finish" />
+
+    <Button
+        android:id="@+id/AddAnotherAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="108dp"
+        android:text=" Add Another Answer" />
+
+</RelativeLayout>

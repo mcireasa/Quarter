@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuestionFormActivity">
+    tools:context=".QuestionFormActivity"
+    android:background="@color/albastru1">
 
 
     <EditText
@@ -79,7 +80,7 @@
         android:contentDescription="buna" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/type"
         android:layout_width="211dp"
         android:layout_height="35dp"
         android:layout_below="@+id/TimeQuestion"
@@ -101,10 +102,11 @@
         android:layout_marginStart="253dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="32dp"
+        android:onClick="add"
         android:text="Next" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/nrAnswers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner"

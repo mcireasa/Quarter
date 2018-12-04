@@ -47,8 +47,9 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="40dp"
         android:background="#FFD700"
+        android:onClick="addQuestion"
         android:text="Questions"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/buttonEditCategory"

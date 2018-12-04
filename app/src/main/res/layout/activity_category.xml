@@ -51,7 +51,6 @@
         android:layout_marginStart="273dp"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="18dp"
-        android:background="#FFFF00"
         android:onClick="add"
         android:text="ADD" />
 

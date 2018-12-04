@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.mcireasa.quizzapp.Model.Category;
+import com.mcireasa.quizzapp.Model.Question;
 
 public class CategoryOptionsActivity extends AppCompatActivity {
 
@@ -29,5 +30,11 @@ public class CategoryOptionsActivity extends AppCompatActivity {
                         TestsActivity.class);
         explicitIntent.putExtra("Category", this.category);
         startActivity(explicitIntent);
+    }
+
+
+    public void addQuestion(View view){
+        Intent addIntent = new Intent(this, QuestionFormActivity.class);
+        startActivity(addIntent);
     }
 }

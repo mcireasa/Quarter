@@ -69,6 +69,7 @@ public class CategoryActivity extends AppCompatActivity {
     public void add(View view) {
         Intent addIntent = new Intent(this, AddCategoryActivity.class);
         startActivityForResult(addIntent,1);
+
     }
 
 
