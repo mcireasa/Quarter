@@ -1,17 +1,29 @@
 package com.mcireasa.quizzapp;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Test;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,38 +34,26 @@ public class CategoryActivity extends AppCompatActivity {
     private Intent myIntent;
     private List lista;
     ArrayAdapter<Category> arrayAdapter=null;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         myIntent = new Intent(this, CategoryOptionsActivity.class);
-        Category c1 = new Category();
-        c1.setName("Pooo");
-        Category c2 = new Category();
-        c2.setName("Abecedar");
-        Category c3 = new Category();
-        Test t1 = new Test();
-        t1.setText("Poo");
-        t1.setMpublic(true);
-        Test t2=new Test();
-        t2.setText("Android");
-        t2.setMpublic(false);
-        t2.setCode("23456");
-        List<Test> test = c3.getTests();
-        c3.addTests(t1);
-        c3.addTests(t2);
-        c3.setName("Android");
-         lista = new ArrayList<>();
-        lista.add(c1);
-        lista.add(c2);
-        lista.add(c3);
 
+       lista = new ArrayList<>();
+
+        progressBar=(ProgressBar)findViewById(R.id.progressBar) ;
 
         listView = (ListView) findViewById(R.id.listviewcategory);
          arrayAdapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1, lista);
+
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(listClick);
+        CategoryWorkers categoryWorkers=new CategoryWorkers();
+        categoryWorkers.execute();
+
     }
 
     AdapterView.OnItemClickListener listClick = new AdapterView.OnItemClickListener() {
@@ -84,6 +84,82 @@ public class CategoryActivity extends AppCompatActivity {
                 arrayAdapter.notifyDataSetChanged();
 
             }
+        }
+    }
+
+    class CategoryWorkers extends AsyncTask<Void,Integer,List<Category>>{
+
+        @Override
+        protected void onPreExecute() {
+            if(progressBar != null) {
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        protected List<Category> doInBackground(Void... voids) {
+            HttpURLConnection connection = null;
+            try {
+                URL url = new URL("https://api.myjson.com/bins/wu4a6");
+                connection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = connection.getInputStream();
+                BufferedReader reader =
+                        new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+                String line = null;
+                while((line = reader.readLine()) != null) {
+                    stringBuilder.append(line);
+                }
+                String result = stringBuilder.toString();
+                Log.d("JSON", result);
+                List<Category> categories=new ArrayList();
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray categoryArray = jsonObject.getJSONArray("categories");
+                for(int i=0;i<categoryArray.length();i++){
+                    Category category=new Category();
+                    JSONObject categoryObject = (JSONObject) categoryArray.get(i);
+                    category.setId(categoryObject.getInt("id"));
+                    category.setName(categoryObject.getString("name"));
+                    JSONArray testsArray=categoryObject.getJSONArray("tests");
+                    for(int j=0;j<testsArray.length();j++){
+                        Test test=new Test();
+                        JSONObject testObject=(JSONObject)testsArray.get(j);
+                        test.setText(testObject.getString("name"));
+                        test.setId(testObject.getInt("id"));
+                        test.setActive(testObject.getBoolean("active"));
+                        test.setMpublic(testObject.getBoolean("public"));
+                        test.setCode(testObject.getString("code"));
+                        category.getTests().add(test);
+                    }
+                    categories.add(category);
+
+                }
+                return categories;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            finally {
+                if(connection != null) {
+                    connection.disconnect();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(List<Category> categories) {
+            if(progressBar != null) {
+                progressBar.setVisibility(View.INVISIBLE);
+            }
+            for(Category categ:categories){
+                lista.add(categ);
+            }
+
+                arrayAdapter.notifyDataSetChanged();
+
+
         }
     }
 }
