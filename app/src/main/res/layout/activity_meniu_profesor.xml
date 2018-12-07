@@ -14,36 +14,43 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:visibility="invisible" />
+
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/categoriesButton"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:background="@drawable/edit_round"
             android:onClick="seeCategories"
             android:text="@string/button_meniu_principal_categorii"
-            android:background="@drawable/edit_round"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/createTestButton"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="@string/button_meniu_principal_crearetest"
-            android:onClick="onClickCreateTest"
-            android:background="@drawable/edit_round"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:textSize="20sp"/>
+            android:background="@drawable/edit_round"
+            android:onClick="onClickCreateTest"
+            android:text="@string/button_meniu_principal_crearetest"
+            android:textSize="20sp" />
 
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="@string/button_meniu_principal_newsfeed"
-        android:onClick="onClickNewsfeed"
-        android:background="@drawable/edit_round"
-        android:textSize="20sp"/>
+        <Button
+            android:id="@+id/newsFeed"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_round"
+            android:onClick="onClickNewsfeed"
+            android:text="@string/button_meniu_principal_newsfeed"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/esti_student"

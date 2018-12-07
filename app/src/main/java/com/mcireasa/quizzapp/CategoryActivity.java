@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Test;
+import com.mcireasa.quizzapp.Model.User;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -34,7 +35,8 @@ public class CategoryActivity extends AppCompatActivity {
     private Intent myIntent;
     private List lista;
     ArrayAdapter<Category> arrayAdapter=null;
-    private ProgressBar progressBar;
+    User user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +45,16 @@ public class CategoryActivity extends AppCompatActivity {
         myIntent = new Intent(this, CategoryOptionsActivity.class);
 
        lista = new ArrayList<>();
+       user=(User) getIntent().getSerializableExtra("User");
+        lista=user.getCategories();
 
-        progressBar=(ProgressBar)findViewById(R.id.progressBar) ;
 
         listView = (ListView) findViewById(R.id.listviewcategory);
          arrayAdapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1, lista);
 
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(listClick);
-        CategoryWorkers categoryWorkers=new CategoryWorkers();
-        categoryWorkers.execute();
+
 
     }
 
@@ -87,79 +89,5 @@ public class CategoryActivity extends AppCompatActivity {
         }
     }
 
-    class CategoryWorkers extends AsyncTask<Void,Integer,List<Category>>{
 
-        @Override
-        protected void onPreExecute() {
-            if(progressBar != null) {
-                progressBar.setVisibility(View.VISIBLE);
-            }
-        }
-
-        @Override
-        protected List<Category> doInBackground(Void... voids) {
-            HttpURLConnection connection = null;
-            try {
-                URL url = new URL("https://api.myjson.com/bins/wu4a6");
-                connection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = connection.getInputStream();
-                BufferedReader reader =
-                        new BufferedReader(new InputStreamReader(inputStream));
-                StringBuilder stringBuilder = new StringBuilder();
-                String line = null;
-                while((line = reader.readLine()) != null) {
-                    stringBuilder.append(line);
-                }
-                String result = stringBuilder.toString();
-                Log.d("JSON", result);
-                List<Category> categories=new ArrayList();
-                JSONObject jsonObject = new JSONObject(result);
-                JSONArray categoryArray = jsonObject.getJSONArray("categories");
-                for(int i=0;i<categoryArray.length();i++){
-                    Category category=new Category();
-                    JSONObject categoryObject = (JSONObject) categoryArray.get(i);
-                    category.setId(categoryObject.getInt("id"));
-                    category.setName(categoryObject.getString("name"));
-                    JSONArray testsArray=categoryObject.getJSONArray("tests");
-                    for(int j=0;j<testsArray.length();j++){
-                        Test test=new Test();
-                        JSONObject testObject=(JSONObject)testsArray.get(j);
-                        test.setText(testObject.getString("name"));
-                        test.setId(testObject.getInt("id"));
-                        test.setActive(testObject.getBoolean("active"));
-                        test.setMpublic(testObject.getBoolean("public"));
-                        test.setCode(testObject.getString("code"));
-                        category.getTests().add(test);
-                    }
-                    categories.add(category);
-
-                }
-                return categories;
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            finally {
-                if(connection != null) {
-                    connection.disconnect();
-                }
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(List<Category> categories) {
-            if(progressBar != null) {
-                progressBar.setVisibility(View.INVISIBLE);
-            }
-            for(Category categ:categories){
-                lista.add(categ);
-            }
-
-                arrayAdapter.notifyDataSetChanged();
-
-
-        }
-    }
 }

@@ -105,19 +105,7 @@
         android:onClick="add"
         android:text="Next" />
 
-    <EditText
-        android:id="@+id/nrAnswers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="102dp"
-        android:ems="10"
-        android:hint="Number of answers"
-        android:inputType="textPersonName" />
+
 
 
 </RelativeLayout>

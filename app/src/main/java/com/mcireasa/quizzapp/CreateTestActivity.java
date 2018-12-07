@@ -4,59 +4,64 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
+
+import com.mcireasa.quizzapp.Model.Category;
+import com.mcireasa.quizzapp.Model.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateTestActivity extends AppCompatActivity{
 
-    String quizCode, activeUntil, Category, aC,tM;
-    boolean Active, Private;
-    int accessCode, Timer;
+    String nameTest,access_code_test;
+    boolean isactive,ispublic,reverse;
+    int nr_access,time_test,reverse_test;
 
-    EditText quiz_code, active, active_until, timer;
-    EditText category, access_code;
-    RadioButton activeb, privateb;
+    EditText name,access_code,time,number_of_access;
+    CheckBox active, mpublic,mreverse;
 
-    test t;
+
+
+    Spinner spinner;
+    private ArrayAdapter<Category> adapter;
+    User user;
+    List<Category> categories;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_test);
+        setContentView(R.layout.activity_add_test);
+        user= (User) getIntent().getSerializableExtra("User");
+        spinner = findViewById(R.id.CatgeorySpinner);
+        adapter = new ArrayAdapter<>(this,
+                R.layout.support_simple_spinner_dropdown_item,
+                user.getCategories());
+        spinner.setAdapter(adapter);
     }
 
     public void onClickAddQuiz(View view) {
-            quiz_code = (EditText)findViewById(R.id.quiz_code);
-            active_until = (EditText)findViewById(R.id.active_until);
-            category = (EditText)findViewById(R.id.category);
-            access_code = (EditText)findViewById(R.id.access_code);
-            activeb = (RadioButton)findViewById(R.id.activebtn);
-            privateb = (RadioButton)findViewById(R.id.privatebtn);
-            timer = (EditText)findViewById(R.id.timer);
-
-            quizCode = quiz_code.getText().toString();
-            activeUntil = active_until.getText().toString();
-            Category = category.getText().toString();
-            aC = access_code.getText().toString();
-            accessCode = Integer.parseInt(aC);
-            tM =timer.getText().toString();
-            Timer = Integer.parseInt(tM);
-
-
-            if(activeb.isChecked())
-            {
-                Active = true;
-                test t = new test(quizCode, Active, activeUntil, Category,accessCode,Timer );
-
-            }else if(privateb.isChecked()){
-                Private = true;
-                test t = new test(quizCode, Private, activeUntil, Category,accessCode,Timer );
-            }
+            name=(EditText)findViewById(R.id.nameFormTest) ;
+            active=(CheckBox)findViewById(R.id.checkBoxActive);
+            mpublic=(CheckBox)findViewById(R.id.checkBoxPublic) ;
+            time=(EditText)findViewById(R.id.Timeformtext) ;
+            access_code = (EditText)findViewById(R.id.AccessCodeText);
+            number_of_access = (EditText)findViewById(R.id.nrAccesstext);
+            nameTest=name.getText().toString();
+            time_test=Integer.parseInt(time.getText().toString());
+            isactive=active.isChecked();
+            ispublic=active.isChecked();
 
 
             Intent intent = new Intent(CreateTestActivity.this,QuestionFormActivity.class);
             startActivity(intent);
 
     }
+
+
 }
