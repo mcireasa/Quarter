@@ -1,6 +1,7 @@
 package com.mcireasa.quizzapp.Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Test implements Serializable {
@@ -12,7 +13,7 @@ public class Test implements Serializable {
     private boolean reverse;
     private int number_access;
     private String code;
-    private List<Question> questions;
+    private List<Question> questions=new ArrayList<>();
 
 
     public Test() {

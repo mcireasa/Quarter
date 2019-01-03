@@ -9,6 +9,20 @@
 
 
     <EditText
+        android:id="@+id/nrq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TimeQuestion"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="102dp"
+        android:ems="10"
+        android:hint="@string/hint_nrQuestions"
+        android:inputType="textPersonName" />
+
+    <EditText
         android:id="@+id/QuestionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +33,7 @@
         android:layout_marginTop="111dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint=" Question text"
+        android:hint="@string/hint_qtext"
         android:inputType="textPersonName" />
 
     <EditText
@@ -33,7 +47,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="Score"
+        android:hint="@string/hint_score"
         android:inputType="textPersonName" />
 
     <EditText
@@ -47,7 +61,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="Time(seconds)"
+        android:hint="@string/hint_times"
         android:inputType="textPersonName" />
 
     <TextView
@@ -60,37 +74,10 @@
         android:layout_marginStart="103dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="112dp"
-        android:text="Add Question"
+        android:text="@string/question_form_title"
         android:textColor="#000"
         android:textSize="25dp"
         android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:layout_below="@+id/TimeQuestion"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="107dp"
-        android:layout_marginRight="107dp"
-        android:contentDescription="buna" />
-
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="211dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/TimeQuestion"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="108dp"
-        android:text=" Type"
-        android:textSize="17dp" />
 
     <Button
         android:id="@+id/nextToAddAnswers"
@@ -103,7 +90,7 @@
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="32dp"
         android:onClick="add"
-        android:text="Next" />
+        android:text="@string/b_nexts_t" />
 
 
 

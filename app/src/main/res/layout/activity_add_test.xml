@@ -142,8 +142,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="71dp"
-        android:layout_marginBottom="41dp"
-        android:text="Next"
-        android:background="#FFF"/>
+        android:layout_marginBottom="43dp"
+        android:background="#FFF"
+        android:onClick="onClickAddQuiz"
+        android:text="Next" />
 
 </RelativeLayout>

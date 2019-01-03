@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Question implements Serializable {
@@ -14,7 +15,7 @@ public class Question implements Serializable {
     private int time;
     private boolean type;
     private Bitmap image;
-    private List<Answer> answers;
+    private List<Answer> answers=new ArrayList<>();
 
     public int getId() {
         return id;

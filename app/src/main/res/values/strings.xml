@@ -43,7 +43,18 @@
     <string name="option_4">Option 4</string>
     <string name="submit">Submit</string>
     <string name="time_remaining">Time remaining</string>
-
+    <string name="hint_nrQuestions">Nr of questions</string>
+    <string name="hint_type">Type</string>
+    <string name="hint_times">Time(seconds)</string>
+    <string name="hint_score">Score</string>
+    <string name="hint_qtext">Question text</string>
+    <string name="question_form_title">New Question</string>
+    <string name="b_nexts_t">Next</string>
+    <string name="title_form_answers">Answers</string>
+    <string name="b_next_ans">Next</string>
+    <string name="b_finish_ans">Next</string>
+    <string name="hint_anstext">Answer text</string>
+    <string name="ans_tag">Is correct?</string>
 
 
 </resources>

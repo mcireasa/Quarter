@@ -19,7 +19,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="78dp"
         android:ems="10"
-        android:hint="Answer Text"
+        android:hint="@string/hint_anstext"
         android:inputType="textPersonName" />
 
     <CheckBox
@@ -32,7 +32,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="152dp"
-        android:text="Is Correct" />
+        android:text="@string/ans_tag" />
 
     <TextView
         android:id="@+id/AnswerFormTitle"
@@ -44,7 +44,7 @@
         android:layout_marginStart="127dp"
         android:layout_marginTop="61dp"
         android:layout_marginEnd="106dp"
-        android:text="New Answer"
+        android:text="@string/title_form_answers"
         android:textColor="#000"
         android:textSize="25dp" />
 
@@ -58,18 +58,7 @@
         android:layout_marginStart="145dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="43dp"
-        android:text="Finish" />
-
-    <Button
-        android:id="@+id/AddAnotherAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="61dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="73dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="108dp"
-        android:text=" Add Another Answer" />
+        android:onClick="Finish"
+        android:text="@string/b_finish_ans" />
 
 </RelativeLayout>

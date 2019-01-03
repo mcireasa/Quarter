@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -36,6 +37,7 @@ public class CategoryActivity extends AppCompatActivity {
     private List lista;
     ArrayAdapter<Category> arrayAdapter=null;
     User user;
+
 
 
     @Override
