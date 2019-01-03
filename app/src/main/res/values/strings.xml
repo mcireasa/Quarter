@@ -30,6 +30,20 @@
     <string name="deleteTest">Delete</string>
     <string name="TextQuestion">Text:</string>
     <string name="ScoreQuestion">Score:</string>
+    <string name="score">Score: 0</string>
+    <string name="contor_intrebari">Question: 1/x</string>
+    <string name="timp">00:30</string>
+    <string name="question_text">Question text</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_3">Option 3</string>
+    <string name="confirm">Confirm</string>
+    <string name="Search_test">Do you want to search for a test?</string>
+    <string name="start_test_provizoriu">Start test</string>
+    <string name="option_4">Option 4</string>
+    <string name="submit">Submit</string>
+    <string name="time_remaining">Time remaining</string>
+
 
 
 </resources>

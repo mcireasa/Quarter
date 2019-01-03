@@ -25,7 +25,7 @@
             android:id="@+id/categoriesButton"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/edit_round"
+            android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="seeCategories"
             android:text="@string/button_meniu_principal_categorii"
             android:textSize="20sp" />
@@ -37,7 +37,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/edit_round"
+            android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="onClickCreateTest"
             android:text="@string/button_meniu_principal_crearetest"
             android:textSize="20sp" />
@@ -47,7 +47,7 @@
             android:id="@+id/newsFeed"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/edit_round"
+            android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="onClickNewsfeed"
             android:text="@string/button_meniu_principal_newsfeed"
             android:textSize="20sp" />
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:clickable="true"
+            android:onClick="onClickEstiStudent"
             android:text="@string/esti_student"
             android:textColor="@color/alb_murdar" />
 

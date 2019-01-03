@@ -123,6 +123,12 @@ public class MeniuProfesorActivity extends AppCompatActivity {
         startActivity(explicitIntent);
     }
 
+    public void onClickEstiStudent(View view)
+    {
+        Intent intentMeniuStudent=new Intent(MeniuProfesorActivity.this, MeniuStudentActivity.class);
+        startActivity(intentMeniuStudent);
+    }
+
     class CategoryWorkers extends AsyncTask<Void,Integer,List<Category>> {
 
         @Override

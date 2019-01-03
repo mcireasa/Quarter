@@ -28,4 +28,12 @@ public class MeniuStudentActivity extends AppCompatActivity {
                         StartTest.class);
         startActivity(explicitIntent);
     }
+
+    public void onClickNewsFeed(View view)
+    {
+        Intent intentNewsFeed =
+                new Intent(this,
+                        NewsFeedActivity.class);
+        startActivity(intentNewsFeed);
+    }
 }

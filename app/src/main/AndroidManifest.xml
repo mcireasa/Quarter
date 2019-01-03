@@ -34,7 +34,8 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".StartTest" />
         <activity android:name=".QuestionFormActivity" />
-        <activity android:name=".AnswersFormActivity"></activity>
+        <activity android:name=".AnswersFormActivity" />
+        <activity android:name=".TestActivity"></activity>
     </application>
 
 </manifest>

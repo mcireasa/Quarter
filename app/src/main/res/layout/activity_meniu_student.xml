@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/edit_round"
+            android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="onClickSearch"
             android:text="@string/button_meniu_student_search"
             android:textSize="20sp" />
@@ -27,7 +27,7 @@
             android:id="@+id/button_meniu_student_myTests"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/edit_round5"
+            android:background="@drawable/edit_round_albastru_inchis"
             android:text="@string/button_meniu_student_myTests"
             android:textSize="20sp"
             android:layout_marginBottom="20dp"/>
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/edit_round"
+            android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="onClickStartTest"
             android:text="@string/button_meniu_student_startTest"
             android:textSize="20sp" />
@@ -46,9 +46,10 @@
             android:id="@+id/button_meniu_student_newsfeed"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/edit_round5"
+            android:background="@drawable/edit_round_albastru_inchis"
             android:text="@string/button_meniu_principal_newsfeed"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:onClick="onClickNewsFeed"/>
 
 
     </LinearLayout>
