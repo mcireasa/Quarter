@@ -52,13 +52,7 @@ public class Test implements Serializable {
         this.active = active;
     }
 
-    public boolean isMpublic() {
-        return mpublic;
-    }
 
-    public void setMpublic(boolean mpublic) {
-        this.mpublic = mpublic;
-    }
 
     public String getCode() {
         return code;
@@ -92,6 +86,14 @@ public class Test implements Serializable {
 
     public void setNumber_access(int number_access) {
         this.number_access = number_access;
+    }
+
+    public boolean isMpublic() {
+        return mpublic;
+    }
+
+    public void setMpublic(boolean mpublic) {
+        this.mpublic = mpublic;
     }
 
     @Override

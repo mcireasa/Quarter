@@ -55,6 +55,8 @@
     <string name="b_finish_ans">Next</string>
     <string name="hint_anstext">Answer text</string>
     <string name="ans_tag">Is correct?</string>
+    <string name="hint_nrquestions">Nr. Questions</string>
+    <string name="b_form_nr_question">Next</string>
 
 
 </resources>

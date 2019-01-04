@@ -21,35 +21,25 @@ public class QuestionFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_form);
          newQuestion=new Question();
+        et_text=(EditText)findViewById(R.id.QuestionText);
+        et_score=(EditText)findViewById(R.id.ScoreQuestion);
+        et_time=(EditText)findViewById(R.id.TimeQuestion);
+        et_nrAnswers=(EditText)findViewById(R.id.nrq);
 
 
     }
 
     public boolean validation(){
+
         boolean valid=true;
-        if(et_text.getText()!=null){
+        if(et_text.getText()==null||"".equals((et_text.getText().toString()))){
             et_text.setError("A question has to have a text");
             valid=false;
         }
-        if(et_nrAnswers.getText()!=null){
-            et_text.setError("A question has to have at least one question");
-            valid=false;
-        }
-        if(et_score.getText()!=null){
-        if(!TextUtils.isDigitsOnly(et_score.getText())){
-            et_score.setError("Only digits");
+        if(et_nrAnswers.getText()==null||"".equals((et_nrAnswers.getText().toString()))){
+            et_nrAnswers.setError("A question has to have at least one question");
             valid=false;
         }else
-        if(Integer.parseInt(et_score.getText().toString())<0||
-                Integer.parseInt(et_score.getText().toString())>100){
-            et_nrAnswers.setError("This number must be smaller than 100 and higher than 0");
-            valid=false;
-        }}
-        if(et_time.getText()!=null){
-        if(!TextUtils.isDigitsOnly(et_time.getText())){
-            et_time.setError("Only digits");
-            valid=false;
-        }}
         if(!TextUtils.isDigitsOnly(et_nrAnswers.getText())){
             et_nrAnswers.setError("Only digits");
             valid=false;
@@ -59,23 +49,62 @@ public class QuestionFormActivity extends AppCompatActivity {
             et_nrAnswers.setError("This number must be smaller than 9 and higher than 0");
             valid=false;
         }
+
+        if(et_score.getText()==null||"".equals((et_score.getText().toString()))){}else
+        if(!TextUtils.isDigitsOnly(et_score.getText())){
+            et_score.setError("Only digits");
+            valid=false;
+        }else
+        if(Integer.parseInt(et_score.getText().toString())<0||
+                Integer.parseInt(et_score.getText().toString())>100){
+            et_score.setError("This number must be smaller than 100 and higher than 0");
+            valid=false;
+        }
+
+        if(et_score.getText()==null||"".equals((et_score.getText().toString()))){}
+        else
+        if(!TextUtils.isDigitsOnly(et_time.getText())){
+            et_time.setError("Only digits");
+            valid=false;
+        }
+
         return valid;
     }
 
     public void add(View view) {
+            if(validation()) {
+                et_nrAnswers = (EditText) findViewById(R.id.nrq);
+                newQuestion.setText(et_text.getText().toString());
+                if(et_score.getText()==null||"".equals((et_score.getText().toString()))){}
+                else{
+                newQuestion.setScore(Integer.parseInt(et_score.getText().toString()));}
+                if(et_time.getText()==null||"".equals((et_time.getText().toString()))){}
+                else{
+                    newQuestion.setTime(Integer.parseInt(et_time.getText().toString()));}
 
-            et_nrAnswers = (EditText) findViewById(R.id.nrq);
-            nr = Integer.parseInt(et_nrAnswers.getText().toString());
-            for (int i = 0; i < nr; i++) {
-                Intent addIntent = new Intent(this, AnswersFormActivity.class);
-                startActivityForResult(addIntent, 1);
+                nr = Integer.parseInt(et_nrAnswers.getText().toString());
+                newQuestion.setNr_answers(nr);
+                for (int i = 0; i < nr; i++) {
+                    Intent addIntent = new Intent(this, AnswersFormActivity.class);
+                    startActivityForResult(addIntent, 1);
+                }
+                int nr=0;
+                for(Answer ans:newQuestion.getAnswers()){
+                    if(ans.isCorrect()){
+                        nr++;
+                    }
+                }
+                if(nr>1){
+                    newQuestion.setType(true);
+                }else {
+                    newQuestion.setType(false);
+                }
+                Intent explicitIntent =
+                        new Intent();
+                explicitIntent.putExtra("Question", newQuestion);
+                setResult(RESULT_OK, explicitIntent);
+                finish();
             }
-            Intent explicitIntent =
-                    new Intent();
-            explicitIntent.putExtra("Question", newQuestion);
-            setResult(RESULT_OK, explicitIntent);
-            finish();
-
     }
 
     @Override

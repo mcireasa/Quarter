@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -47,39 +48,69 @@ public class CreateTestActivity extends AppCompatActivity{
                 R.layout.support_simple_spinner_dropdown_item,
                 user.getCategories());
         spinner.setAdapter(adapter);
+        name=(EditText)findViewById(R.id.nameFormTest) ;
+        active=(CheckBox)findViewById(R.id.checkBoxActive);
+        mpublic=(CheckBox)findViewById(R.id.checkBoxPublic) ;
+        mreverse=(CheckBox)findViewById(R.id.checkBoxReverse) ;
+        time=(EditText)findViewById(R.id.Timeformtext) ;
+
+        access_code = (EditText)findViewById(R.id.AccessCodeText);
+        number_of_access = (EditText)findViewById(R.id.nrAccesstext);
     }
 
-    public void onClickAddQuiz(View view) {
-            name=(EditText)findViewById(R.id.nameFormTest) ;
-            active=(CheckBox)findViewById(R.id.checkBoxActive);
-            mpublic=(CheckBox)findViewById(R.id.checkBoxPublic) ;
-            mreverse=(CheckBox)findViewById(R.id.checkBoxReverse) ;
-            time=(EditText)findViewById(R.id.Timeformtext) ;
 
-            access_code = (EditText)findViewById(R.id.AccessCodeText);
-            number_of_access = (EditText)findViewById(R.id.nrAccesstext);
-            nameTest=name.getText().toString();
-            time_test=Integer.parseInt(time.getText().toString());
-            isactive=active.isChecked();
-            ispublic=mpublic.isChecked();
-            if(!ispublic){
-                access_code_test=access_code.getText().toString();
+    public boolean validation(){
+        boolean valid=true;
+
+
+        if(name.getText()==null||"".equals((name.getText().toString()))){
+            name.setError("A test has to have a name");
+            valid=false;
+        }
+        if(time.getText()==null||"".equals((time.getText().toString()))){
+        }else
+        if(!TextUtils.isDigitsOnly(time.getText())){
+            time.setError("Only digits");
+            valid=false;
+        }
+
+        if(mpublic.isChecked()){}else
+            if(access_code.getText()==null||"".equals((access_code.getText().toString()))){
+                access_code.setError("This test has to have an access code");
+                valid=false;
             }
-            nr_access=Integer.parseInt(number_of_access.getText().toString());
-            reverse=mreverse.isChecked();
 
 
 
-            Intent intent = new Intent(CreateTestActivity.this,QuestionFormActivity.class);
-            startActivityForResult(intent,1);
+        return valid;
+    }
+    public void onClickAddQuiz(View view) {
+            if(validation()){
+            test.setText(name.getText().toString());
+            if(time==null||"".equals((time.getText().toString()))){} else{
+            test.setTime(Integer.parseInt(time.getText().toString()));}
+            test.setActive(active.isChecked());
+            test.setMpublic(mpublic.isChecked());
+            if(!ispublic){
+                test.setCode(access_code.getText().toString());
+            }
+            if(number_of_access==null||"".equals((number_of_access.getText().toString()))){} else{
+            test.setNumber_access(Integer.parseInt(number_of_access.getText().toString()));}
+            test.setReverse(mreverse.isChecked());
+
+
+
+            Intent intent = new Intent(CreateTestActivity.this,NrQuestionsForm.class);
+            intent.putExtra("Test",test);
+            startActivityForResult(intent,1);}
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode==1&&resultCode==RESULT_OK){
-           Question question =(Question) data.getSerializableExtra("Question");
-            test.getQuestions().add(question);
+            test =(Test) data.getSerializableExtra("Test");
+
         }
     }
 

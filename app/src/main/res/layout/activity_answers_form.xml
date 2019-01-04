@@ -58,7 +58,7 @@
         android:layout_marginStart="145dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="43dp"
-        android:onClick="Finish"
+        android:onClick="finish"
         android:text="@string/b_finish_ans" />
 
 </RelativeLayout>

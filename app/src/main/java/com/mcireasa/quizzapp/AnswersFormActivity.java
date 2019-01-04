@@ -17,11 +17,14 @@ import com.mcireasa.quizzapp.Model.Question;
 public class AnswersFormActivity extends AppCompatActivity {
 
     Answer answer=new Answer();
+    EditText answer_text;
+    CheckBox checkBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers_form);
-
+        answer_text=(EditText)findViewById(R.id.AnswerText);
+        checkBox=(CheckBox)findViewById(R.id.checkBoxIsCorrect);
 
 
 
@@ -29,11 +32,29 @@ public class AnswersFormActivity extends AppCompatActivity {
 
     }
 
-    public void Finish(View view){
-        Intent explicitIntent =
-                new Intent();
-        explicitIntent.putExtra("Answer", answer);
-        setResult(RESULT_OK,explicitIntent);
-        finish();
+    public boolean validation(){
+
+        boolean valid= true;
+
+
+        if(answer_text.getText()==null||"".equals((answer_text.getText().toString()))){
+            answer_text.setError("An answer has to have a text");
+            valid=false;
+        }
+        return valid;
+    }
+
+    public void finish(View view){
+
+        if(validation()) {
+
+            answer.setText(answer_text.getText().toString());
+            answer.setCorrect(checkBox.isChecked());
+            Intent explicitIntent =
+                    new Intent();
+            explicitIntent.putExtra("Answer", answer);
+            setResult(RESULT_OK, explicitIntent);
+            finish();
+        }
     }
 }

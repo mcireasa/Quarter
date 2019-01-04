@@ -35,7 +35,8 @@
         <activity android:name=".StartTest" />
         <activity android:name=".QuestionFormActivity" />
         <activity android:name=".AnswersFormActivity" />
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".TestActivity" />
+        <activity android:name=".NrQuestionsForm"></activity>
     </application>
 
 </manifest>
