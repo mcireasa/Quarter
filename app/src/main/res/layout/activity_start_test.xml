@@ -64,6 +64,6 @@
         android:layout_toEndOf="@+id/button3"
         android:onClick="start_test_activity"
         android:text="@string/start_test_provizoriu"
-        android:textColor="@color/alb_murdar"/>
+        android:textColor="@color/alb_murdar" />
 
 </RelativeLayout>

@@ -16,7 +16,7 @@ public class StartTest extends AppCompatActivity {
 
     public void start_test_activity(View view)
     {
-        Intent intentStartTest=new Intent(StartTest.this, TestActivity.class );
+        Intent intentStartTest=new Intent(StartTest.this, MultiAnswerActivity.class );
         startActivity(intentStartTest);
     }
 
