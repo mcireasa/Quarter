@@ -9,7 +9,7 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String email;
-    private boolean type;
+    private int type;
     private List<Category> categories;
 
     public User() {
@@ -48,11 +48,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public boolean isType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(boolean type) {
+    public void setType(int type) {
         this.type = type;
     }
 

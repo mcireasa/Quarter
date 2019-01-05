@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Test;
 import com.mcireasa.quizzapp.Model.User;
+import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,6 +39,11 @@ public class CategoryActivity extends AppCompatActivity {
     ArrayAdapter<Category> arrayAdapter=null;
     User user;
 
+    List<Category> categories = new ArrayList<>();
+
+    private DatabaseRepository repository;
+
+
 
 
     @Override
@@ -50,9 +56,19 @@ public class CategoryActivity extends AppCompatActivity {
        user=(User) getIntent().getSerializableExtra("User");
         lista=user.getCategories();
 
+        repository = new DatabaseRepository(getApplicationContext());
+        repository.open();
+
+        categories = repository.getCategories();
+
+        Log.i("info", categories.toString());
+
+        repository.close();
+
+
 
         listView = (ListView) findViewById(R.id.listviewcategory);
-         arrayAdapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1, lista);
+         arrayAdapter = new ArrayAdapter<Category>(this, android.R.layout.simple_list_item_1, categories);
 
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(listClick);

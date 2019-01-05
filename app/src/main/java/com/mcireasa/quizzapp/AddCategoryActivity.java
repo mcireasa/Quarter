@@ -7,10 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.mcireasa.quizzapp.Model.Category;
+import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 public class AddCategoryActivity extends AppCompatActivity {
 
     private EditText nameCategory;
+    private DatabaseRepository repository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,19 @@ public class AddCategoryActivity extends AppCompatActivity {
             }else {
                 explicitIntent.putExtra("CategoryName", nameCategory.getText().toString());
                 setResult(RESULT_OK,explicitIntent);
+
+                repository = new DatabaseRepository(getApplicationContext());
+                repository.open();
+
+                Category category = new Category();
+                category.setName(nameCategory.getText().toString());
+
+                Long id = repository.insertCategory(category);
+                repository.close();
+
+                Toast.makeText(this, String.valueOf(id), Toast.LENGTH_SHORT).show();
+
+
                 finish();
             }
         }

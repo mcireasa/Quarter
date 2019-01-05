@@ -11,11 +11,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Question;
 import com.mcireasa.quizzapp.Model.Test;
 import com.mcireasa.quizzapp.Model.User;
+import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,7 @@ public class CreateTestActivity extends AppCompatActivity{
     EditText name,access_code,time,number_of_access;
     CheckBox active, mpublic,mreverse;
 
+    private DatabaseRepository repository;
 
 
     Spinner spinner;
@@ -98,9 +101,18 @@ public class CreateTestActivity extends AppCompatActivity{
             test.setNumber_access(Integer.parseInt(number_of_access.getText().toString()));}
             test.setReverse(mreverse.isChecked());
 
+            repository = new DatabaseRepository(getApplicationContext());
+            repository.open();
+
+            Long id = repository.insertTest(test);
+            repository.close();
+
+            Toast.makeText(this, String.valueOf(id), Toast.LENGTH_SHORT).show();
 
 
-            Intent intent = new Intent(CreateTestActivity.this,NrQuestionsForm.class);
+
+
+                Intent intent = new Intent(CreateTestActivity.this,NrQuestionsForm.class);
             intent.putExtra("Test",test);
             startActivityForResult(intent,1);}
 
@@ -113,6 +125,5 @@ public class CreateTestActivity extends AppCompatActivity{
 
         }
     }
-
 
 }
