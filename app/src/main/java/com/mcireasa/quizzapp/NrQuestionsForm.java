@@ -10,17 +10,22 @@ import android.widget.EditText;
 
 import com.mcireasa.quizzapp.Model.Question;
 import com.mcireasa.quizzapp.Model.Test;
+import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 public class NrQuestionsForm extends AppCompatActivity {
 
     EditText nr_questions;
     Test test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nr_questions_form);
         nr_questions=(EditText)findViewById(R.id.nrQuestions);
         test =(Test)getIntent().getSerializableExtra("Test");
+
+
+
     }
 
     public boolean validation(){
@@ -44,6 +49,7 @@ public class NrQuestionsForm extends AppCompatActivity {
             int nr = Integer.parseInt(nr_questions.getText().toString());
             for (int i = 0; i < nr; i++) {
                 Intent addIntent = new Intent(this, QuestionFormActivity.class);
+                addIntent.putExtra("Test",test);
                 startActivityForResult(addIntent, 1);
             }
             Intent explicitIntent =

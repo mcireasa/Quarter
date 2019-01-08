@@ -10,12 +10,19 @@ import android.widget.EditText;
 
 import com.mcireasa.quizzapp.Model.Answer;
 import com.mcireasa.quizzapp.Model.Question;
+import com.mcireasa.quizzapp.Model.Test;
+import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 public class QuestionFormActivity extends AppCompatActivity {
 
     EditText et_nrAnswers,et_text,et_score,et_time;
     int nr;
     Question newQuestion=new Question();
+
+    private DatabaseRepository repository;
+
+    Test test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +32,8 @@ public class QuestionFormActivity extends AppCompatActivity {
         et_score=(EditText)findViewById(R.id.ScoreQuestion);
         et_time=(EditText)findViewById(R.id.TimeQuestion);
         et_nrAnswers=(EditText)findViewById(R.id.nrq);
+        test =(Test)getIntent().getSerializableExtra("Test");
+
 
 
     }
@@ -84,21 +93,34 @@ public class QuestionFormActivity extends AppCompatActivity {
 
                 nr = Integer.parseInt(et_nrAnswers.getText().toString());
                 newQuestion.setNr_answers(nr);
+
+//                int nr=0;
+//                for(Answer ans:newQuestion.getAnswers()){
+//                    if(ans.isCorrect()){
+//                        nr++;
+//                    }
+//                }
+//                if(nr>1){
+//                    newQuestion.setType(true);
+//                }else {
+//                    newQuestion.setType(false);
+//                }
+
+                repository = new DatabaseRepository(getApplicationContext());
+                repository.open();
+
+                newQuestion.setId(Integer.valueOf(String.valueOf(repository.insertQuestion(newQuestion, test.getId()))));
+
+
+
                 for (int i = 0; i < nr; i++) {
                     Intent addIntent = new Intent(this, AnswersFormActivity.class);
+                    addIntent.putExtra("questionId", newQuestion.getId());
                     startActivityForResult(addIntent, 1);
                 }
-                int nr=0;
-                for(Answer ans:newQuestion.getAnswers()){
-                    if(ans.isCorrect()){
-                        nr++;
-                    }
-                }
-                if(nr>1){
-                    newQuestion.setType(true);
-                }else {
-                    newQuestion.setType(false);
-                }
+
+                repository.close();
+
                 Intent explicitIntent =
                         new Intent();
                 explicitIntent.putExtra("Question", newQuestion);

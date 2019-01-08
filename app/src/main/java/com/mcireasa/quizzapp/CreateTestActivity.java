@@ -46,11 +46,18 @@ public class CreateTestActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_test);
         user= (User) getIntent().getSerializableExtra("User");
+
+        repository = new DatabaseRepository(getApplicationContext());
+        repository.open();
+
+        List<Category> categoryList =repository.getCategories();
         spinner = findViewById(R.id.CatgeorySpinner);
         adapter = new ArrayAdapter<>(this,
                 R.layout.support_simple_spinner_dropdown_item,
-                user.getCategories());
+                categoryList);
         spinner.setAdapter(adapter);
+
+
         name=(EditText)findViewById(R.id.nameFormTest) ;
         active=(CheckBox)findViewById(R.id.checkBoxActive);
         mpublic=(CheckBox)findViewById(R.id.checkBoxPublic) ;
@@ -104,16 +111,13 @@ public class CreateTestActivity extends AppCompatActivity{
             repository = new DatabaseRepository(getApplicationContext());
             repository.open();
 
-            Long id = repository.insertTest(test);
+            test.setId(Integer.valueOf(String.valueOf(repository.insertTest(test))));
             repository.close();
 
-            Toast.makeText(this, String.valueOf(id), Toast.LENGTH_SHORT).show();
 
-
-
-
-                Intent intent = new Intent(CreateTestActivity.this,NrQuestionsForm.class);
+            Intent intent = new Intent(CreateTestActivity.this,NrQuestionsForm.class);
             intent.putExtra("Test",test);
+
             startActivityForResult(intent,1);}
 
     }

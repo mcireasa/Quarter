@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 
+import com.mcireasa.quizzapp.Model.Answer;
 import com.mcireasa.quizzapp.Model.Category;
+import com.mcireasa.quizzapp.Model.Question;
 import com.mcireasa.quizzapp.Model.Test;
 import com.mcireasa.quizzapp.Model.User;
 
@@ -149,6 +151,113 @@ public class DatabaseRepository implements DatabaseConstants {
 
         return result;
     }
+
+
+
+    public long insertQuestion(Question question, Integer testId) {
+        if (question == null) {
+            return -1;
+        }
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(QUESTION_TEXT, question.getText());
+        contentValues.put(SCORE, question.getScore());
+        contentValues.put(TIME, question.getTime());
+        contentValues.put(TEST_ID, testId);
+
+        //TODO - de verificat ce e cu question type in model
+        //TODO de vazut ce facem cu testId
+
+
+        return database.insert(QUESTIONS,
+                null, contentValues);
+    }
+
+
+    public List<Question> getQuestions(){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + QUESTIONS + ";", null);
+
+        List<Question> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            Question question = new Question();
+
+            question.setId(cursor.getInt(cursor.getColumnIndex(QUESTION_ID)));
+            question.setText(cursor.getString(cursor.getColumnIndex(QUESTION_TEXT)));
+            question.setScore(cursor.getInt(cursor.getColumnIndex(SCORE)));
+            question.setTime(cursor.getInt(cursor.getColumnIndex(TIME)));
+
+            //TODO de adaugat si aici type
+
+            result.add(question);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+
+
+    public long insertAnswer(Answer answer, Integer questionId) {
+        if (answer == null) {
+            return -1;
+        }
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(ANSWER_TEXT, answer.getText());
+        contentValues.put(CORRECT_FLAG, answer.isCorrect());
+        contentValues.put(QUESTION_ID, questionId);
+
+        //TODO - de vazut cu idQuestion
+
+
+        return database.insert(ANSWERS,
+                null, contentValues);
+    }
+
+
+    public List<Answer> getAnswers(){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + ANSWERS + ";", null);
+
+        List<Answer> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            Answer answer = new Answer();
+
+            answer.setId(cursor.getInt(cursor.getColumnIndex(ANSWER_ID)));
+            answer.setCorrect( cursor.getInt(cursor.getColumnIndex(CORRECT_FLAG)) > 0);
+            answer.setText(cursor.getString(cursor.getColumnIndex(ANSWER_TEXT)));
+
+            result.add(answer);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

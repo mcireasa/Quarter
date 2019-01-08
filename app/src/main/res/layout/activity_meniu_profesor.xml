@@ -61,6 +61,12 @@
             android:text="@string/esti_student"
             android:textColor="@color/alb_murdar" />
 
+        <Button
+            android:id="@+id/raportsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raports" />
+
     </LinearLayout>
 
 

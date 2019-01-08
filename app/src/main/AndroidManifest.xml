@@ -38,6 +38,8 @@
         <activity android:name=".UniqueAnswerActivity" />
         <activity android:name=".NrQuestionsForm" />
         <activity android:name=".MultiAnswerActivity"></activity>
+        <activity android:name=".RaportsActivity" />
+        <activity android:name=".ExportActivity" />
     </application>
 
 </manifest>

@@ -42,7 +42,7 @@ public class MeniuProfesorActivity extends AppCompatActivity {
     ProgressBar progressBar;
     List<Category>lista;
     User user;
-    Button addTest,showCategories,newsfeed;
+    Button addTest,showCategories,newsfeed, raports;
 
 
     @Override
@@ -60,6 +60,8 @@ public class MeniuProfesorActivity extends AppCompatActivity {
         addTest=(Button)findViewById(R.id.createTestButton);
         showCategories=(Button)findViewById(R.id.categoriesButton);
         newsfeed=(Button)findViewById(R.id.newsFeed);
+        raports = findViewById(R.id.raportsButton);
+        raports.setOnClickListener(viewRaports());
         CategoryWorkers categoryWorkers=new CategoryWorkers();
         categoryWorkers.execute();
 
@@ -127,6 +129,16 @@ public class MeniuProfesorActivity extends AppCompatActivity {
     {
         Intent intentMeniuStudent=new Intent(MeniuProfesorActivity.this, MeniuStudentActivity.class);
         startActivity(intentMeniuStudent);
+    }
+
+    private View.OnClickListener viewRaports() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),RaportsActivity.class);
+                startActivity(intent);
+            }
+        };
     }
 
     class CategoryWorkers extends AsyncTask<Void,Integer,List<Category>> {

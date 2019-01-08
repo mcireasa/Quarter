@@ -6,7 +6,7 @@ public interface DatabaseConstants {
 
 
     String DATABASE_NAME = "quarter.db";
-    int DATABASE_VERSION = 2;
+    int DATABASE_VERSION = 4;
 
 
     String USERS = "USERS";
@@ -84,6 +84,8 @@ public interface DatabaseConstants {
 
     String DROP_TABLE_CATEGORIES = "DROP TABLE IF EXISTS "
             + CATEGORIES+ ";";
+    String DROP_TABLE_CATEGORIES_TESTS = "DROP TABLE IF EXISTS "
+            + CATEGORIES_TESTS+ ";";
 
     String MY_TESTS = "MY_TESTS";
     String MT_ID = "id_mt";
@@ -112,9 +114,30 @@ public interface DatabaseConstants {
             + " ( " + QUESTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
             QUESTION_TEXT + " TEXT, " +
             SCORE + " INTEGER, " +
-            TIME + " INTEGER " +
+            TIME + " INTEGER, " +
             TEST_ID + " INTEGER, "+
             QUESTION_TYPE + "  TEXT);";
+
+    String DROP_TABLE_QUESTION = "DROP TABLE IF EXISTS "
+            + QUESTIONS + ";";
+
+    String ANSWERS = "ANSWERS";
+    String ANSWER_ID = "id_answer";
+    String ANSWER_TEXT = "answer_text";
+    String CORRECT_FLAG = "correct_flag";
+
+    String CREATE_TABLE_ANSWERS = "CREATE TABLE " + ANSWERS
+            + " ( " + ANSWER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+            ANSWER_TEXT + " TEXT, " +
+            CORRECT_FLAG + " BOOLEAN, " +
+            QUESTION_ID + " INTEGER );";
+
+    String DROP_TABLE_ANSWER = "DROP TABLE IF EXISTS "
+            + ANSWERS+ ";";
+
+
+
+
 
 
 

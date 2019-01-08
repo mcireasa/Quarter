@@ -13,21 +13,25 @@ import android.widget.TextView;
 import com.mcireasa.quizzapp.Model.Answer;
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Question;
+import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 public class AnswersFormActivity extends AppCompatActivity {
 
     Answer answer=new Answer();
     EditText answer_text;
     CheckBox checkBox;
+    Integer questionId;
+
+    private DatabaseRepository repository;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers_form);
         answer_text=(EditText)findViewById(R.id.AnswerText);
         checkBox=(CheckBox)findViewById(R.id.checkBoxIsCorrect);
-
-
-
+        questionId = getIntent().getIntExtra("idQuestion", 1);
 
 
     }
@@ -50,6 +54,13 @@ public class AnswersFormActivity extends AppCompatActivity {
 
             answer.setText(answer_text.getText().toString());
             answer.setCorrect(checkBox.isChecked());
+
+            repository = new DatabaseRepository(getApplicationContext());
+            repository.open();
+
+
+            answer.setId(Integer.valueOf(String.valueOf(repository.insertAnswer(answer, questionId))));
+
             Intent explicitIntent =
                     new Intent();
             explicitIntent.putExtra("Answer", answer);
