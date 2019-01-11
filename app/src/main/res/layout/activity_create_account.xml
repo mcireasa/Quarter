@@ -8,7 +8,7 @@
     android:background="@color/albastru3">
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/username_newaccount"
         android:layout_width="304dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
@@ -22,10 +22,10 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/password_newaccount"
         android:layout_width="299dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/username_newaccount"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="44dp"
@@ -36,10 +36,10 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/repeatpass_newaccount"
         android:layout_width="296dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/password_newaccount"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="44dp"
@@ -50,10 +50,10 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/email_newaccount"
         android:layout_width="308dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/repeatpass_newaccount"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="44dp"
@@ -64,24 +64,25 @@
         android:inputType="textPersonName" />
 
     <RadioGroup
+        android:id="@+id/group_prof_student"
         android:layout_width="294dp"
         android:layout_height="57dp"
-        android:layout_below="@+id/editText7"
+        android:layout_below="@+id/email_newaccount"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="42dp" >
+        android:layout_marginEnd="42dp">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/profesor_option"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/rb_teacher_op" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/student_option"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -89,16 +90,17 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonCreateAccount"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="33dp"
+        android:background="@drawable/edit_round_albastru_deschis"
+        android:onClick="onClickCreate"
         android:text="@string/Create_acc_string"
         android:textColor="#2121b1"
-        android:textSize="16sp"
-        android:background="@drawable/edit_round_albastru_deschis"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView4"
