@@ -37,9 +37,10 @@
         <activity android:name=".AnswersFormActivity" />
         <activity android:name=".UniqueAnswerActivity" />
         <activity android:name=".NrQuestionsForm" />
-        <activity android:name=".MultiAnswerActivity"></activity>
+        <activity android:name=".MultiAnswerActivity" />
         <activity android:name=".RaportsActivity" />
         <activity android:name=".ExportActivity" />
+        <activity android:name=".CreateAccountActivity"></activity>
     </application>
 
 </manifest>

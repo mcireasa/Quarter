@@ -88,6 +88,22 @@
         android:textColor="#FFF"
         android:textSize="20dp" />
 
+    <TextView
+        android:id="@+id/DontHaveAccount"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="112dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onClickNewAccount"
+        android:text="@string/createnewaccounttext"
+        android:textColor="#FFF"
+        android:textSize="20dp" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="218dp"
