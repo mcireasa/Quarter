@@ -57,6 +57,15 @@
     <string name="ans_tag">Is correct?</string>
     <string name="hint_nrquestions">Nr. Questions</string>
     <string name="b_form_nr_question">Next</string>
+    <string name="username_form">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="repeatPass_hint">Repeat Password</string>
+    <string name="email_hint_create">Email</string>
+    <string name="rb_teacher_op">Profesor</string>
+    <string name="op_student_tag">Student</string>
+    <string name="Create_acc_string">Create</string>
+    <string name="title_new_account">New Account</string>
+    <string name="createnewaccounttext">Create new account</string>
 
 
 </resources>
