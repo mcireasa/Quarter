@@ -18,7 +18,7 @@ import java.util.List;
 public class RaportsActivity extends AppCompatActivity {
 
     TextView name, noQuestions;
-    Button export;
+    Button export, chart;
 
     private ListView list;
 
@@ -40,6 +40,9 @@ public class RaportsActivity extends AppCompatActivity {
 
         export.setOnClickListener(viewRaports());
 
+        chart = findViewById(R.id.button5);
+        chart.setOnClickListener(viewChart());
+
         list = findViewById(R.id.listview_tests);
 
         databaseRepository.open();
@@ -59,6 +62,16 @@ public class RaportsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),ExportActivity.class);
+                startActivity(intent);
+            }
+        };
+    }
+
+    private View.OnClickListener viewChart() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),BarChartActivity.class);
                 startActivity(intent);
             }
         };

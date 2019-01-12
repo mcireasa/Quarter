@@ -12,4 +12,18 @@
         <item name="android:textColor">#00FF00</item>
     </style>
 
+    <style name="BlackText" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">#6600ff</item>
+        <item name="colorPrimaryDark">#ff99ff</item>
+        <item name="colorAccent">#ff6600</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:capitalize">characters</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">4pt</item>
+        <item name="android:textColor">#75fa0000</item>/>
+        <item name="colorButtonNormal">#1a42e1</item>
+        <!--&lt;!&ndash;<item name="android:windowBackground">#747474</item>   -->
+         </style>
+
 </resources>

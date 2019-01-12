@@ -37,7 +37,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="123dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginBottom="17dp"
         android:text="Export" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/export"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="56dp"
+        android:text="Chart" />
 </android.widget.RelativeLayout>

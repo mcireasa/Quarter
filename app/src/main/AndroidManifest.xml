@@ -32,7 +32,7 @@
         <activity android:name=".AboutActivity" />
         <activity android:name=".MeniuStudentActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".StartTest" />
+        <activity android:name=".EnterPINActivity" />
         <activity android:name=".QuestionFormActivity" />
         <activity android:name=".AnswersFormActivity" />
         <activity android:name=".UniqueAnswerActivity" />
@@ -41,6 +41,8 @@
         <activity android:name=".RaportsActivity" />
         <activity android:name=".ExportActivity" />
         <activity android:name=".CreateAccountActivity"></activity>
+        <activity android:name=".StartTestActivity" />
+        <activity android:name=".BarChartActivity" />
     </application>
 
 </manifest>

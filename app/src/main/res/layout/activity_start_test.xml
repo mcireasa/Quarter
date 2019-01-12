@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartTest"
+    tools:context=".EnterPINActivity"
     android:background="@color/albastru3">
 
     <ImageView
@@ -18,7 +18,7 @@
         android:contentDescription="@string/nav_logout"
         app:srcCompat="@drawable/logo" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView5"
         android:layout_width="200dp"
         android:layout_height="40sp"

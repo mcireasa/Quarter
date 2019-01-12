@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User implements Serializable {
+
+    private String globalId;
     private int id;
     private String username;
     private String password;
@@ -14,6 +16,14 @@ public class User implements Serializable {
 
     public User() {
         categories=new ArrayList<>();
+    }
+
+    public String getGlobalId() {
+        return globalId;
+    }
+
+    public void setGlobalId(String globalId) {
+        this.globalId = globalId;
     }
 
     public int getId() {

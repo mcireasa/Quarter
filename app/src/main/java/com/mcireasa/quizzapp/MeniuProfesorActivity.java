@@ -56,7 +56,7 @@ public class MeniuProfesorActivity extends AppCompatActivity {
         actionBarToggle.syncState();
         progressBar=(ProgressBar)findViewById(R.id.progressBar) ;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        user=new User();
+        user= (User) getIntent().getSerializableExtra("User");
         addTest=(Button)findViewById(R.id.createTestButton);
         showCategories=(Button)findViewById(R.id.categoriesButton);
         newsfeed=(Button)findViewById(R.id.newsFeed);
@@ -140,6 +140,7 @@ public class MeniuProfesorActivity extends AppCompatActivity {
             }
         };
     }
+
 
     class CategoryWorkers extends AsyncTask<Void,Integer,List<Category>> {
 

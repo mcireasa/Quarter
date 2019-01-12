@@ -25,7 +25,7 @@ public class MeniuStudentActivity extends AppCompatActivity {
     {
         Intent explicitIntent =
                 new Intent(this,
-                        StartTest.class);
+                        EnterPINActivity.class);
         startActivity(explicitIntent);
     }
 
