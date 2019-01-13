@@ -115,7 +115,7 @@ public class QuestionFormActivity extends AppCompatActivity {
 
                 for (int i = 0; i < nr; i++) {
                     Intent addIntent = new Intent(this, AnswersFormActivity.class);
-                    addIntent.putExtra("questionId", newQuestion.getId());
+                    addIntent.putExtra("idQuestion", newQuestion.getId());
                     startActivityForResult(addIntent, 1);
                 }
 

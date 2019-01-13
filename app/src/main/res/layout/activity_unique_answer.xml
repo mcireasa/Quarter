@@ -78,7 +78,8 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/edit_round_albastru_deschis"
-        android:text="@string/submit" />
+        android:onClick="next"
+        android:text="@string/next" />
 
     <RadioGroup
         android:id="@+id/radioGroupAns"

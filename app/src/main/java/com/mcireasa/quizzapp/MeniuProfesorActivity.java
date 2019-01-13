@@ -1,10 +1,12 @@
 package com.mcireasa.quizzapp;
 
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -108,7 +110,7 @@ public class MeniuProfesorActivity extends AppCompatActivity {
     public void onClickCreateTest(View view) {
         Intent intentCreateTest = new Intent(MeniuProfesorActivity.this, CreateTestActivity.class);
         intentCreateTest.putExtra("User",user);
-        startActivity(intentCreateTest);
+        startActivityForResult(intentCreateTest,1);
     }
 
     public void onClickNewsfeed(View view) {
@@ -151,6 +153,9 @@ public class MeniuProfesorActivity extends AppCompatActivity {
             }
             if(newsfeed!=null){
                 newsfeed.setVisibility(View.INVISIBLE);
+            }
+            if(raports!=null){
+                raports.setVisibility(View.INVISIBLE);
             }
 
         }
@@ -221,6 +226,9 @@ public class MeniuProfesorActivity extends AppCompatActivity {
             if(newsfeed!=null){
                 newsfeed.setVisibility(View.VISIBLE);
             }
+            if(raports!=null){
+                raports.setVisibility(View.VISIBLE);
+            }
             for(Category categ:categoriesList){
                 user.getCategories().add(categ);
             }
@@ -228,6 +236,20 @@ public class MeniuProfesorActivity extends AppCompatActivity {
 
 
 
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode==1&&resultCode==RESULT_OK){
+            Test test =(Test) data.getSerializableExtra("Test");
+            Category cat=(Category)data.getSerializableExtra("Category");
+            for(Category c:user.getCategories()){
+                if(c.getName().equals(cat.getName())){
+                    c.addTests(test);
+                }
+            }
         }
     }
 }

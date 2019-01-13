@@ -80,4 +80,18 @@ public class Question implements Serializable {
     public void setAnswers(List<Answer> answers) {
         this.answers = answers;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", nr_answers=" + nr_answers +
+                ", score=" + score +
+                ", time=" + time +
+                ", type=" + type +
+                ", image=" + image +
+                ", answers=" + answers +
+                '}';
+    }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.mcireasa.quizzapp.Model.Test;
 import com.mcireasa.quizzapp.database.DatabaseRepository;
@@ -29,42 +30,37 @@ public class EnterPINActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start_test);
         pin = findViewById(R.id.textView5);
         enter = findViewById(R.id.button3);
-        enter.setOnClickListener(enter());
+
 
 
     }
-
-    private View.OnClickListener enter() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void clickEnter(View view){
 
                 repository = new DatabaseRepository(getApplicationContext());
                 repository.open();
 
                 testList = repository.getTests();
 
-                for(int i=0;i<testList.size();i++)
-                    if(testList.get(i).getCode().equals(pin.getText().toString()))
+                for(Test t:testList)
+                    if(t.getCode().equals(pin.getText().toString()))
                     {
-                        Intent intent=new Intent(getApplicationContext(),StartTestActivity.class);
-                        intent.putExtra("test", testList.get(i));
+                        Intent intent=new Intent(this,StartTestActivity.class);
+                        intent.putExtra("test", t);
                         startActivity(intent);
                     }
 
-            }
-        };
     }
 
 
-    public void start_test_activity(View view)
-    {
-        Intent intentStartTest=new Intent(EnterPINActivity.this, MultiAnswerActivity.class );
-        startActivity(intentStartTest);
-    }
+//    public void start_test_activity(View view)
+//    {
+//        Intent intentStartTest=new Intent(EnterPINActivity.this, MultiAnswerActivity.class );
+//        startActivity(intentStartTest);
+//    }
 
     public void onClickSearch(View view)
     {
+
         Intent intentSearch=new Intent(EnterPINActivity.this, SearchActivity.class );
         startActivity(intentSearch);
     }

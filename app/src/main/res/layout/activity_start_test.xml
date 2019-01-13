@@ -22,23 +22,28 @@
         android:id="@+id/textView5"
         android:layout_width="200dp"
         android:layout_height="40sp"
-        android:layout_centerInParent="true"
-        android:hint="@string/text_pin"
-        android:textSize="30sp"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="254dp"
         android:background="@drawable/edit_round_turcoaz"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:hint="@string/text_pin"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="200dp"
         android:layout_height="40sp"
-        android:layout_above="@id/textView5"
+        android:layout_below="@+id/textView5"
         android:layout_alignEnd="@+id/imageView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginBottom="222dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="2dp"
         android:background="@drawable/edit_round_mov_deschis"
         android:gravity="center"
+        android:onClick="clickEnter"
         android:text="@string/enterTest"
         android:textSize="30sp" />
 
@@ -48,22 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="72dp"
         android:onClick="onClickSearch"
-        android:textColor="@color/alb_murdar"
         android:text="@string/Search_test"
+        android:textColor="@color/alb_murdar"
         android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="21dp"
-        android:layout_toEndOf="@+id/button3"
-        android:onClick="start_test_activity"
-        android:text="@string/start_test_provizoriu"
-        android:textColor="@color/alb_murdar" />
 
 </RelativeLayout>

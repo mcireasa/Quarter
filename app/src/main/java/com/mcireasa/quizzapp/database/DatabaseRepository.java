@@ -106,6 +106,7 @@ public class DatabaseRepository implements DatabaseConstants {
 
         while(cursor.moveToNext()) {
             Test test = new Test();
+            test.setId(cursor.getInt(cursor.getColumnIndex(TESTS_ID)));
             test.setText(cursor.getString(cursor.getColumnIndex(NAME_TEST)));
             test.setActive(Boolean.valueOf(String.valueOf(cursor.getColumnIndex(ACTIVE))));
             test.setMpublic(Boolean.valueOf(String.valueOf(cursor.getColumnIndex(PUBLIC))));
@@ -201,6 +202,32 @@ public class DatabaseRepository implements DatabaseConstants {
         return result;
     }
 
+    public List<Question> getQuestionsbyId(int id){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + QUESTIONS + " WHERE TEST_ID="+id+";", null);
+
+        List<Question> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            Question question = new Question();
+
+            question.setId(cursor.getInt(cursor.getColumnIndex(QUESTION_ID)));
+            question.setText(cursor.getString(cursor.getColumnIndex(QUESTION_TEXT)));
+            question.setScore(cursor.getInt(cursor.getColumnIndex(SCORE)));
+            question.setTime(cursor.getInt(cursor.getColumnIndex(TIME)));
+
+
+
+            result.add(question);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+
 
     public long insertAnswer(Answer answer, Integer questionId) {
         if (answer == null) {
@@ -224,6 +251,28 @@ public class DatabaseRepository implements DatabaseConstants {
     public List<Answer> getAnswers(){
 
         Cursor cursor = database.rawQuery("SELECT * FROM  " + ANSWERS + ";", null);
+
+        List<Answer> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            Answer answer = new Answer();
+
+            answer.setId(cursor.getInt(cursor.getColumnIndex(ANSWER_ID)));
+            answer.setCorrect( cursor.getInt(cursor.getColumnIndex(CORRECT_FLAG)) > 0);
+            answer.setText(cursor.getString(cursor.getColumnIndex(ANSWER_TEXT)));
+
+            result.add(answer);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+    public List<Answer> getAnswersById(int id){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + ANSWERS +" WHERE id_question="+id+ ";", null);
 
         List<Answer> result = new ArrayList<>();
 

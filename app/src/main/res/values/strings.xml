@@ -66,6 +66,13 @@
     <string name="Create_acc_string">Create</string>
     <string name="title_new_account">New Account</string>
     <string name="createnewaccounttext">Create new account</string>
+    <string name="raports_tag_b">Raports</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="next">Next</string>
+    <string name="result_tile" >Result</string>
+    <string name="score_finish">Final score:</string>
+    <string name="backfinish">Back  to menu</string>
+    <string name="result_title_finish">Result</string>
 
 
 </resources>

@@ -49,8 +49,9 @@ public class CreateTestActivity extends AppCompatActivity{
 
         repository = new DatabaseRepository(getApplicationContext());
         repository.open();
-
+        categories=user.getCategories();
         List<Category> categoryList =repository.getCategories();
+        categoryList.addAll(categories);
         spinner = findViewById(R.id.CatgeorySpinner);
         adapter = new ArrayAdapter<>(this,
                 R.layout.support_simple_spinner_dropdown_item,
@@ -126,7 +127,13 @@ public class CreateTestActivity extends AppCompatActivity{
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode==1&&resultCode==RESULT_OK){
             test =(Test) data.getSerializableExtra("Test");
-
+            Category category=(Category)spinner.getSelectedItem();
+            Intent explicitIntent =
+                    new Intent();
+            explicitIntent.putExtra("Category",category);
+            explicitIntent.putExtra("Test", test);
+            setResult(RESULT_OK, explicitIntent);
+            finish();
         }
     }
 

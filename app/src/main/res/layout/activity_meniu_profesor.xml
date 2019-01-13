@@ -24,7 +24,7 @@
         <Button
             android:id="@+id/categoriesButton"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="seeCategories"
             android:text="@string/button_meniu_principal_categorii"
@@ -34,7 +34,7 @@
         <Button
             android:id="@+id/createTestButton"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/edit_round_albastru_deschis"
@@ -46,7 +46,8 @@
         <Button
             android:id="@+id/newsFeed"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/edit_round_albastru_deschis"
             android:onClick="onClickNewsfeed"
             android:text="@string/button_meniu_principal_newsfeed"
@@ -55,8 +56,10 @@
         <Button
             android:id="@+id/raportsButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Raports" />
+            android:layout_height="80dp"
+            android:background="@drawable/edit_round_albastru_deschis"
+            android:text="@string/raports_tag_b"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
