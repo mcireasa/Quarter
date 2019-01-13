@@ -73,6 +73,7 @@
     <string name="score_finish">Final score:</string>
     <string name="backfinish">Back  to menu</string>
     <string name="result_title_finish">Result</string>
+    <string name="tag_statistics">Statistics</string>
 
 
 </resources>

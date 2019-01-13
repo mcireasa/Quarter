@@ -26,6 +26,8 @@ public class MultiAnswerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.activity_multi_answer);
         q=(Question)getIntent().getSerializableExtra("question") ;
         nr=(Integer) getIntent().getIntExtra("number",1);

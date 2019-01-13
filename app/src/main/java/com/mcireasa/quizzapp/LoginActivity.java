@@ -30,9 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setTheme(R.style.BlackText);
-
         setContentView(R.layout.activity_login);
         textUsername = (EditText)findViewById(R.id.TextUsername);
         textPassword = (EditText)findViewById(R.id.TextPassword);

@@ -31,6 +31,8 @@ public class StartTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.star_test_activity);
         test= (Test) getIntent().getSerializableExtra("test");
 

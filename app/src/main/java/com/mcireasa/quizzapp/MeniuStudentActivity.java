@@ -13,6 +13,8 @@ public class MeniuStudentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.activity_meniu_student);
 
         user= (User) getIntent().getSerializableExtra("User");

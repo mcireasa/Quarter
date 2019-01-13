@@ -68,6 +68,7 @@ public class DatabaseRepository implements DatabaseConstants {
 
         while(cursor.moveToNext()) {
             User user = new User();
+            user.setId(cursor.getInt(cursor.getColumnIndex(USERS_ID)));
             user.setEmail(cursor.getString(cursor.getColumnIndex(EMAIL)));
             user.setUsername(cursor.getString(cursor.getColumnIndex(NAME)));
             user.setPassword(cursor.getString(cursor.getColumnIndex(PASSWORD)));

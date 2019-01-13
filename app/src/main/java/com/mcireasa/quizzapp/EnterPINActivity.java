@@ -29,6 +29,8 @@ public class EnterPINActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.activity_start_test);
         pin = findViewById(R.id.textView5);
         enter = findViewById(R.id.button3);

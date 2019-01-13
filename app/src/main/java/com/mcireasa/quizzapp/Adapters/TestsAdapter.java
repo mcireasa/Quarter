@@ -1,6 +1,7 @@
 package com.mcireasa.quizzapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mcireasa.quizzapp.BarChartActivity;
 import com.mcireasa.quizzapp.Model.Test;
 import com.mcireasa.quizzapp.R;
 import com.mcireasa.quizzapp.TestsActivity;
@@ -63,8 +65,8 @@ public class TestsAdapter extends ArrayAdapter<Test> {
 
 
 
-
     }
+
 
 
 }

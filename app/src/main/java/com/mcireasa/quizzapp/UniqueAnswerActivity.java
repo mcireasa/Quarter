@@ -27,6 +27,8 @@ public class UniqueAnswerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.activity_unique_answer);
         q=(Question)getIntent().getSerializableExtra("question") ;
         title=(TextView)findViewById(R.id.text_view_question);

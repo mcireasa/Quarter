@@ -25,6 +25,8 @@ public class NewsFeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.activity_news_feed);
         Log.d(TAG, "onCreate:started");
 

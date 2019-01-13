@@ -36,6 +36,8 @@ public class MyTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.BlackText);
+
         setContentView(R.layout.raport_stud);
 
         nume = findViewById(R.id.nume_test_stud);
@@ -46,8 +48,6 @@ public class MyTestActivity extends AppCompatActivity {
         databaseRepository.open();
 
         myTestsList = databaseRepository.getMyTests();
-
-        Toast.makeText(this, myTestsList.toString(), Toast.LENGTH_LONG).show();
 
         user= (User) getIntent().getSerializableExtra("User");
 
