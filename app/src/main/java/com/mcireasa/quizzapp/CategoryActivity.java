@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.mcireasa.quizzapp.Model.Category;
 import com.mcireasa.quizzapp.Model.Test;
@@ -44,8 +45,6 @@ public class CategoryActivity extends AppCompatActivity {
     private DatabaseRepository repository;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,12 +58,13 @@ public class CategoryActivity extends AppCompatActivity {
         repository = new DatabaseRepository(getApplicationContext());
         repository.open();
 
-        categories = repository.getCategories();
+        categories = user.getCategories();
+
+        categories.addAll(repository.getCategories());
 
         Log.i("info", categories.toString());
 
         repository.close();
-
 
 
         listView = (ListView) findViewById(R.id.listviewcategory);
@@ -99,7 +99,7 @@ public class CategoryActivity extends AppCompatActivity {
         if(requestCode==1&&resultCode==RESULT_OK){
             Category category=new Category();
             category.setName(data.getStringExtra("CategoryName"));
-            lista.add(category);
+            categories.add(category);
             if(arrayAdapter!=null) {
                 arrayAdapter.notifyDataSetChanged();
 

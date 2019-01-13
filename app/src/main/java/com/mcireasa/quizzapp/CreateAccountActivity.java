@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.mcireasa.quizzapp.Model.User;
@@ -32,18 +33,15 @@ public class CreateAccountActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
 
         setContentView(R.layout.activity_create_account);
-
         repository = new DatabaseRepository(getApplicationContext());
-
-
-
         firebaseController = FirebaseController.getInstance();
 
+        init();
 
     }
 
 
-    public void onClickCreate(View view){
+    public void init(){
         etUsername=(EditText)findViewById(R.id.username_newaccount);
         etPassword=(EditText)findViewById(R.id.password_newaccount);
         etRepeatPassword=(EditText)findViewById(R.id.repeatpass_newaccount);
@@ -54,7 +52,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         createAccount = findViewById(R.id.buttonCreateAccount);
         createAccount.setOnClickListener(create());
 
-
     }
 
     private View.OnClickListener create() {
@@ -62,6 +59,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validation()) {
+
                     username = etUsername.getText().toString();
                     password = etPassword.getText().toString();
                     repeatpassword = etRepeatPassword.getText().toString();

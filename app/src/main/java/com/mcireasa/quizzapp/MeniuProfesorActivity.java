@@ -116,19 +116,12 @@ public class MeniuProfesorActivity extends AppCompatActivity {
         startActivity(intentNewsfeed);
     }
 
-
     public void seeCategories(View view) {
         Intent explicitIntent =
                 new Intent(this,
                         CategoryActivity.class);
         explicitIntent.putExtra("User",user);
         startActivity(explicitIntent);
-    }
-
-    public void onClickEstiStudent(View view)
-    {
-        Intent intentMeniuStudent=new Intent(MeniuProfesorActivity.this, MeniuStudentActivity.class);
-        startActivity(intentMeniuStudent);
     }
 
     private View.OnClickListener viewRaports() {

@@ -73,4 +73,17 @@ public class User implements Serializable {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "globalId='" + globalId + '\'' +
+                ", id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", type=" + type +
+                ", categories=" + categories +
+                '}';
+    }
 }

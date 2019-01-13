@@ -97,7 +97,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="33dp"
         android:background="@drawable/edit_round_albastru_deschis"
-        android:onClick="onClickCreate"
         android:text="@string/Create_acc_string"
         android:textColor="#2121b1"
         android:textSize="16sp" />

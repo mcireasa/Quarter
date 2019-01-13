@@ -50,7 +50,7 @@ public class AddCategoryActivity extends AppCompatActivity {
                 Long id = repository.insertCategory(category);
                 repository.close();
 
-                Toast.makeText(this, String.valueOf(id), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, String.valueOf(id), Toast.LENGTH_SHORT).show();
 
 
                 finish();
