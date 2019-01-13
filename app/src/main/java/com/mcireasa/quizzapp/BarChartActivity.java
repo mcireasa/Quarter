@@ -52,7 +52,7 @@ public class BarChartActivity extends AppCompatActivity {
         repository = new DatabaseRepository(getApplicationContext());
         repository.open();
 
-        test= (Test) getIntent().getSerializableExtra("Test");
+        test= (Test) getIntent().getSerializableExtra("test");
 
         testList = repository.getMyTests();
 
@@ -66,7 +66,7 @@ public class BarChartActivity extends AppCompatActivity {
         for(int i=0;i<myTestsList.size();i++)
         {
             Notes.add(new BarEntry(myTestsList.get(i).getScore(),i+4));
-            notes.add(userList.get(myTestsList.get(i).getId_user()).getUsername());
+            notes.add(String.valueOf(myTestsList.get(i).getId_user()));
         }
 
 

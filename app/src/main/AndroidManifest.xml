@@ -62,8 +62,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".FinishTestActivity"></activity>
+        <activity android:name=".FinishTestActivity" />
         <activity android:name=".MyTestActivity" />
+        <activity android:name=".StatisticsActivity"></activity>
     </application>
 
 </manifest>

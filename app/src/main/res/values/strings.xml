@@ -69,11 +69,13 @@
     <string name="raports_tag_b">Raports</string>
     <string name="title_activity_maps">Map</string>
     <string name="next">Next</string>
-    <string name="result_tile" >Result</string>
+    <string name="result_tile">Result</string>
     <string name="score_finish">Final score:</string>
     <string name="backfinish">Back  to menu</string>
     <string name="result_title_finish">Result</string>
     <string name="tag_statistics">Statistics</string>
+    <string name="ButtonStatShow">Show</string>
+    <string name="statisticTitleShow">Statistics</string>
 
 
 </resources>
