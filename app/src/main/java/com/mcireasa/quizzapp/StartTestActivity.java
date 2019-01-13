@@ -12,6 +12,7 @@ import com.mcireasa.quizzapp.Model.Answer;
 import com.mcireasa.quizzapp.Model.MyTest;
 import com.mcireasa.quizzapp.Model.Question;
 import com.mcireasa.quizzapp.Model.Test;
+import com.mcireasa.quizzapp.Model.User;
 import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class StartTestActivity extends AppCompatActivity {
     TextView name;
     Button start;
     Test test;
+    User user;
 
     private DatabaseRepository repository;
     List<Question> questions;
@@ -37,6 +39,9 @@ public class StartTestActivity extends AppCompatActivity {
         start = findViewById(R.id.start_test);
 
         name.setText(test.getText());
+
+        user= (User) getIntent().getSerializableExtra("User");
+
 
 
         repository = new DatabaseRepository(getApplicationContext());
@@ -57,6 +62,7 @@ public class StartTestActivity extends AppCompatActivity {
     public void start(View view){
         MyTest myTest=new MyTest();
         myTest.setId_test(test.getId());
+        myTest.setId_user(user.getId());
        Question q=test.getQuestions().get(0);
             Intent intent;
 

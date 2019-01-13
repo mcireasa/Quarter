@@ -27,10 +27,11 @@
             android:id="@+id/button_meniu_student_myTests"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/edit_round_albastru_inchis"
+            android:onClick="onClickMyTests"
             android:text="@string/button_meniu_student_myTests"
-            android:textSize="20sp"
-            android:layout_marginBottom="20dp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/butto_meniu_student_startTest"

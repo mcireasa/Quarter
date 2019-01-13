@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.widget.RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/mov1">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/nume_test_stud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="Nume test" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nume_test_stud"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="91dp"
+        android:text="Punctaj" />
+
+    <ListView
+        android:id="@+id/listview_tests_stud"
+        android:layout_width="wrap_content"
+        android:layout_height="351dp"
+        android:layout_alignStart="@+id/nume_test_stud"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-32dp"
+        android:layout_marginTop="74dp" />
+</android.widget.RelativeLayout>

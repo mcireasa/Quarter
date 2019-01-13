@@ -37,7 +37,6 @@ public class RaportsActivity extends AppCompatActivity {
         name = findViewById(R.id.nume_test);
         noQuestions = findViewById(R.id.cod_acces);
         export = findViewById(R.id.export);
-
         export.setOnClickListener(viewRaports());
 
         chart = findViewById(R.id.button5);

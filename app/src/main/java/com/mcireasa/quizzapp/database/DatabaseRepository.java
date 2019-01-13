@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteException;
 
 import com.mcireasa.quizzapp.Model.Answer;
 import com.mcireasa.quizzapp.Model.Category;
+import com.mcireasa.quizzapp.Model.DidQuestion;
+import com.mcireasa.quizzapp.Model.MyAnswers;
+import com.mcireasa.quizzapp.Model.MyTest;
 import com.mcireasa.quizzapp.Model.Question;
 import com.mcireasa.quizzapp.Model.Test;
 import com.mcireasa.quizzapp.Model.User;
@@ -292,6 +295,120 @@ public class DatabaseRepository implements DatabaseConstants {
 
         return result;
     }
+
+    public long insertDidQuestion(DidQuestion didQuestion, Integer myTestId) {
+        if (didQuestion == null) {
+            return -1;
+        }
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(MT_ID, myTestId);
+        contentValues.put(SCORE, didQuestion.getScore());
+        contentValues.put(QUESTION_ID, didQuestion.getIdQuestion());
+
+        return database.insert(DID_QUESTIONS,
+                null, contentValues);
+    }
+
+    public List<DidQuestion> getDidQuestions(){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + DID_QUESTIONS + ";", null);
+
+        List<DidQuestion> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            DidQuestion didQuestion = new DidQuestion();
+
+            didQuestion.setId(cursor.getInt(cursor.getColumnIndex(DID_QUESTIONS_ID)));
+            didQuestion.setIdQuestion(cursor.getInt(cursor.getColumnIndex(QUESTION_ID)));
+            didQuestion.setScore(cursor.getInt(cursor.getColumnIndex(SCORE)));
+
+            result.add(didQuestion);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+
+    public long insertMyAnswer(MyAnswers myAnswers,Integer id ) {
+        if (myAnswers== null) {
+            return -1;
+        }
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(DID_QUESTIONS_ID, id);
+        contentValues.put(ANSWER_ID, myAnswers.getAnswer());
+
+        return database.insert(MY_ANSWERS,
+                null, contentValues);
+    }
+
+    public List<MyAnswers> getMyAnswers(){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + MY_ANSWERS + ";", null);
+
+        List<MyAnswers> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            MyAnswers myAnswers = new MyAnswers();
+            myAnswers.setId(cursor.getInt(cursor.getColumnIndex(MY_ANSWER_ID)));
+            myAnswers.setAnswer(cursor.getInt(cursor.getColumnIndex(ANSWER_ID)));
+
+            result.add(myAnswers);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+
+    public long insertMyTest(MyTest myTest) {
+        if (myTest== null) {
+            return -1;
+        }
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(USER_ID, myTest.getId_user());
+        contentValues.put(TEST_ID, myTest.getId_test());
+        contentValues.put(SCORE, myTest.getScore());
+
+        return database.insert(MY_TESTS,
+                null, contentValues);
+    }
+
+    public List<MyTest> getMyTests(){
+
+        Cursor cursor = database.rawQuery("SELECT * FROM  " + MY_TESTS + ";", null);
+
+        List<MyTest> result = new ArrayList<>();
+
+
+        while (cursor.moveToNext()) {
+
+            MyTest myTest = new MyTest();
+
+            myTest.setId(cursor.getInt(cursor.getColumnIndex(MT_ID)));
+            myTest.setId_test(cursor.getInt(cursor.getColumnIndex(TEST_ID)));
+            myTest.setId_user(cursor.getInt(cursor.getColumnIndex(USER_ID)));
+            myTest.setScore(cursor.getInt(cursor.getColumnIndex(SCORE)));
+
+            result.add(myTest);
+        }
+
+        cursor.close();
+
+        return result;
+    }
+
+
 
 
 

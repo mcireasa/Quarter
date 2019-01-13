@@ -74,4 +74,17 @@ public class MyTest implements Serializable {
     public void setDid_questionsList(List<DidQuestion> did_questionsList) {
         this.did_questionsList = did_questionsList;
     }
+
+    @Override
+    public String toString() {
+        return "MyTest{" +
+                "id=" + id +
+                ", id_user=" + id_user +
+                ", id_test=" + id_test +
+                ", score=" + score +
+                ", time_submitted=" + time_submitted +
+                ", time=" + time +
+                ", did_questionsList=" + did_questionsList +
+                '}';
+    }
 }

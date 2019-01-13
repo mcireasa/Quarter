@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.mcireasa.quizzapp.Model.Test;
+import com.mcireasa.quizzapp.Model.User;
 import com.mcireasa.quizzapp.database.DatabaseRepository;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class EnterPINActivity extends AppCompatActivity {
 
     EditText pin;
     Button enter;
+    User user;
 
     List<Test> testList = new ArrayList<>();
 
@@ -30,6 +32,8 @@ public class EnterPINActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start_test);
         pin = findViewById(R.id.textView5);
         enter = findViewById(R.id.button3);
+        user= (User) getIntent().getSerializableExtra("User");
+
 
 
 
@@ -46,6 +50,8 @@ public class EnterPINActivity extends AppCompatActivity {
                     {
                         Intent intent=new Intent(this,StartTestActivity.class);
                         intent.putExtra("test", t);
+                        intent.putExtra("User",user);
+
                         startActivity(intent);
                     }
 
